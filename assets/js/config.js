@@ -13,7 +13,7 @@ window.SHINERAY_CONFIG = {
     // Slider "valor desejado da parcela".
     // Faixa de referência do slider (ajustar quando houver as condições dos grupos).
     parcela: {
-        min: 200,
+        min: 400,
         max: 1200,
         step: 25,
         initial: 450

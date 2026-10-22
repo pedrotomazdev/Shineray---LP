@@ -24,7 +24,7 @@ Lighthouse local (servidor com compressão), 22/10/2026: **100 / 100 / 100 / 100
 - Fonte Inter Tight hospedada em `assets/fonts` (subset latin, variável 400–700) com `preload` e fallback de métricas.
 - Elementos do hero sem animação de entrada (não atrasam o LCP); demais seções com `.reveal`.
 - Imagens WebP com `srcset`/`sizes`, `width`/`height` e `loading="lazy"` fora da primeira dobra.
-- CSS/JS versionados por query (`?v=2.2.0`) — **troque a versão a cada publicação**, pois o `vercel.json`
+- CSS/JS versionados por query (`?v=2.2.1`) — **troque a versão a cada publicação**, pois o `vercel.json`
   aplica cache de 1 ano (`immutable`) em `assets/css`, `assets/js` e `assets/fonts`.
 - SEO: title/description, canonical, Open Graph + Twitter (`assets/img/og-consorcio-shineray.jpg`, 1200×630),
   JSON-LD (Organization + WebPage), favicons, `robots.txt` e `sitemap.xml`.
@@ -44,7 +44,7 @@ Os marcadores "a confirmar" foram retirados do site a pedido. No lugar, ficou te
 | Item | Como está no site |
 | --- | --- |
 | WhatsApp de atendimento | `config.js`: (34) 9843-4495, do briefing — tem 8 dígitos após o DDD; testar se a conversa abre |
-| Faixa do slider | R$ 200 a R$ 1.200+, passo R$ 25 (`config.js`) |
+| Faixa do slider | R$ 400 a R$ 1.200+, passo R$ 25 (`config.js`) |
 | Administradora | “autorizada e fiscalizada pelo Banco Central”, sem nome/CNPJ |
 | Gráfico de planejamento | plano ilustrativo de 48 meses com parcela reduzida até a contemplação |
 | Composição da parcela | proporções ilustrativas, sem percentuais |

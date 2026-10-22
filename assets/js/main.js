@@ -18,7 +18,7 @@
     const forms = $$('.lead-form');
     const heroSelect = $('#hero-modelo');
     // Slider de parcela
-    const P = CFG.parcela || { min: 200, max: 1200, step: 25, initial: 450 };
+    const P = CFG.parcela || { min: 400, max: 1200, step: 25, initial: 450 };
     const ranges = $$('[data-parcela-range]');
 
     const paintRange = (range) => {
