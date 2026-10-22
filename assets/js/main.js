@@ -392,7 +392,10 @@
         });
         // Não disputa espaço com o aviso de cookies
         const cookieOpen = !document.getElementById('cookie-popup').hidden;
-        const show = window.scrollY > vh * 0.9 && !formVisible && !cookieOpen;
+        // Nem sobre a assinatura do rodapé
+        const signature = document.querySelector('.signature');
+        const atFooter = signature && signature.getBoundingClientRect().top < vh;
+        const show = window.scrollY > vh * 0.9 && !formVisible && !cookieOpen && !atFooter;
         floatCta.classList.toggle('is-visible', show);
         floatCta.setAttribute('aria-hidden', show ? 'false' : 'true');
         $('a', floatCta).tabIndex = show ? 0 : -1;
@@ -419,6 +422,9 @@
     onScroll();
 
     $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+
+    // Assinatura da agência: aplica a fonte Rajdhani só perto do rodapé (não disputa banda no carregamento)
+    onView($$('.signature'), (el) => el.classList.add('is-near'), { rootMargin: '0px 0px 600px 0px' });
 
     /* ---------------- Consentimento de cookies (LGPD) + integrações ---------------- */
 

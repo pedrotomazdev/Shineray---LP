@@ -1859,7 +1859,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 /* ---------- Rodapé ---------- */
 
 .site-footer {
-    padding: 72px 0 32px;
+    padding: 72px 0 0;
     border-top: 1px solid var(--line);
     font-size: .94rem;
     color: var(--ink-2);
@@ -1905,22 +1905,153 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
 .footer-legal {
     margin-top: 48px;
-    padding-top: 24px;
+    padding: 24px 0 32px;
     border-top: 1px solid var(--line);
     font-size: .8rem;
     color: var(--muted);
 }
 
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 20px;
+/* ---------- Assinatura padrão Agência R8 ---------- */
+
+@font-face {
+    font-family: "Rajdhani";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("../fonts/rajdhani-latin-300.woff2") format("woff2");
 }
 
-.footer-bottom a {
+@font-face {
+    font-family: "Rajdhani";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/rajdhani-latin-700.woff2") format("woff2");
+}
+
+.signature {
+    padding: 10px 0;
+    background-color: #ffffff;
+    border-top: 1px solid var(--line);
+}
+
+/* A Rajdhani só é aplicada (e baixada) quando o rodapé se aproxima da tela — ver main.js */
+.signature * {
+    font-family: "Inter Tight Fallback", sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.signature.is-near * {
+    font-family: "Rajdhani", sans-serif;
+}
+
+.signature .signature-content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signature .signature-content .store-info {
+    color: #212121;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.signature .signature-content .store-info strong {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.signature .signature-content .logos {
+    display: flex;
+    align-items: center;
+}
+
+.signature .signature-content .logos a {
     text-decoration: none;
+}
+
+@media (max-width: 635px) {
+    .signature .signature-content {
+        flex-direction: column;
+    }
+
+    .signature .signature-content .store-info {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+/* Tooltip "Design e Implementação" */
+.tool {
+    cursor: help;
+    position: relative;
+    text-align: center;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool::before,
+.tool::after {
+    right: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: -100;
+}
+
+.tool:hover::before,
+a:focus-visible .tool::before,
+.tool:hover::after,
+a:focus-visible .tool::after {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    z-index: 100;
+}
+
+.tool::before {
+    border-style: solid;
+    border-width: 1em 0.75em 0 0.75em;
+    border-color: #000 transparent transparent transparent;
+    bottom: 100%;
+    content: "";
+    margin-left: -0.5em;
+    transition: all 0.65s cubic-bezier(0.84, -0.18, 0.31, 1.26), opacity 0.65s 0.5s;
+    transform: scale(0.6) translateY(-90%);
+}
+
+.tool:hover::before,
+a:focus-visible .tool::before {
+    transition: all 0.65s cubic-bezier(0.84, -0.18, 0.31, 1.26) 0.2s;
+}
+
+.tool::after {
+    background: #000;
+    border-radius: 0.25em;
+    bottom: 45px;
+    color: #EDEFF0;
+    content: attr(data-tip);
+    padding: 1em;
+    white-space: nowrap;
+    transition: all 0.65s cubic-bezier(0.84, -0.18, 0.31, 1.26) 0.2s;
+    transform: scale(0.6) translateY(50%);
+}
+
+.tool:hover::after,
+a:focus-visible .tool::after {
+    transition: all 0.65s cubic-bezier(0.84, -0.18, 0.31, 1.26);
+}
+
+@media (max-width: 760px) {
+    .tool::after {
+        font-size: 0.75em;
+        margin-left: -5em;
+        width: 10em;
+        white-space: normal;
+    }
 }
 
 /* ---------- CTA flutuante (leva ao formulário) ---------- */
