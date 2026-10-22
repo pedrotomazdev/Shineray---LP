@@ -1,0 +1,9 @@
+# Configuração local do Claude/preview
+.claude/
+
+# PNGs originais (6,5 MB) usados só para gerar os WebP
+assets/img/_src/
+
+# Sistema
+.DS_Store
+Thumbs.db
