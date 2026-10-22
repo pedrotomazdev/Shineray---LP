@@ -32,7 +32,7 @@
 
     <!-- Fonte hospedada localmente (sem requisição bloqueante a terceiros) -->
     <link rel="preload" href="assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/css/style.css?v=2.1.0">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.2.0">
     <script>document.documentElement.classList.add('js');</script>
 
     <script type="application/ld+json">
@@ -45,7 +45,7 @@
                 "name": "Shineray Teq Motors",
                 "url": "https://shinerayuberlandiamg.com.br/",
                 "logo": "https://landingpage-shinray.vercel.app/assets/img/logo-dark.png",
-                "sameAs": ["https://instagram.com/teqmotorsuberlandia"]
+                "sameAs": ["https://www.instagram.com/shineray.motodagenteuberlandia/"]
             },
             {
                 "@type": "WebPage",
@@ -64,8 +64,7 @@
 <body>
     <!--
         CONCEITO VISUAL — v2 (revisão interna).
-        Tudo marcado com a classe .tbc / atributo data-tbc é "a confirmar" com o cliente.
-        Configurações comerciais (WhatsApp, faixa do slider, integrações) ficam em assets/js/config.js.
+        Configurações comerciais (WhatsApp de atendimento, faixa do slider, integrações) ficam em assets/js/config.js.
     -->
 
     <!-- Ícones (sprite) -->
@@ -74,7 +73,6 @@
         <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
         <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
         <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-        <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.5c0 3.6 2.9 6.5 6.5 6.5l1-1.6-2-1-1 .9a4 4 0 0 1-2.3-2.3l.9-1-1-2Z" fill="currentColor"/></symbol>
         <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3M4 7.5V17a2 2 0 0 0 2 2h14V9H6.5A2.5 2.5 0 0 1 4 7.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="16" cy="14" r="1.3" fill="currentColor"/></symbol>
         <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.2 3-5 6-5s5.4 1.8 6 5M16 5.2a3.2 3.2 0 0 1 0 5.6M18 14.3c1.6.7 2.7 2.4 3 4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
         <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
@@ -102,10 +100,6 @@
                 <a href="#duvidas">Dúvidas</a>
             </nav>
             <div class="header-actions">
-                <a class="link-wa js-wa" data-wa-context="header" href="#" target="_blank" rel="noopener"
-                    aria-label="Falar no WhatsApp (abre em nova aba)">
-                    <svg class="ico"><use href="#i-wa" /></svg><span>WhatsApp</span>
-                </a>
                 <a class="btn btn-primary btn-sm" href="#simular" data-focus-form>Simular parcela</a>
             </div>
         </div>
@@ -151,8 +145,7 @@
                         </div>
                     </li>
                 </ol>
-                    <a class="link-inline link-light js-wa" data-wa-context="hero" href="#"
-                        target="_blank" rel="noopener">Prefere tirar uma dúvida antes? Fale no WhatsApp <svg
+                    <a class="link-inline link-light" href="#simular" data-focus-form>Simular agora <svg
                             class="ico"><use href="#i-arrow" /></svg></a>
                 </div>
 
@@ -214,7 +207,6 @@
                             <div class="range-scale" aria-hidden="true"><span data-range-min></span><span
                                     data-range-max></span></div>
                             <p id="hero-parcela-hint" class="hint">
-                                <span class="tbc" data-tbc>Faixa provisória — a confirmar</span>
                                 Valor de referência para a conversa; o plano final depende das condições do grupo.
                             </p>
                         </div>
@@ -222,7 +214,8 @@
                         <button class="btn btn-primary btn-block" type="submit">
                             Quero minha simulação <svg class="ico"><use href="#i-arrow" /></svg>
                         </button>
-                        <p class="form-legal">Seus dados são usados apenas para o atendimento sobre o consórcio,
+                        <p class="form-legal">Ao enviar, o atendimento continua no WhatsApp. Seus dados são usados
+                            apenas para o atendimento sobre o consórcio,
                             conforme a <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
                         <div class="form-status" role="status" aria-live="polite" hidden></div>
                     </form>
@@ -267,8 +260,7 @@
                             decoding="async">
                         <div class="float-chip chip-a">
                             <span class="chip-label">Sua parcela</span>
-                            <strong class="chip-value" data-mirror-parcela>R$ —</strong>
-                            <span class="chip-sub">por mês, você escolhe</span>
+                            <span class="chip-msg">Do tamanho do seu mês.<br>Você escolhe.</span>
                         </div>
                         <div class="float-chip chip-b">
                             <svg class="ico"><use href="#i-calendar" /></svg>
@@ -288,11 +280,7 @@
                     </p>
                     <div class="hero-ctas reveal">
                         <a class="btn btn-primary" href="#simular" data-focus-form>
-                            Simular minha parcela <svg class="ico"><use href="#i-arrow" /></svg>
-                        </a>
-                        <a class="btn btn-ghost js-wa" data-wa-context="proposta" href="#" target="_blank"
-                            rel="noopener">
-                            <svg class="ico"><use href="#i-wa" /></svg> Falar com um especialista
+                            Simular agora <svg class="ico"><use href="#i-arrow" /></svg>
                         </a>
                     </div>
                 </div>
@@ -365,6 +353,8 @@
                         <div>
                             <span class="badge badge-outline">Simulação ilustrativa</span>
                             <h3 class="h3">E se a contemplação acontecer no mês…</h3>
+                            <p class="plan-sub">A contemplação <b>não é previsível</b>: ela acontece nas assembleias,
+                                <b>por sorteio ou por lance</b>. Arraste e veja como a parcela muda antes e depois dela.</p>
                         </div>
                         <div class="plan-control">
                             <label for="plan-month" class="sr-only">Mês da contemplação no cenário ilustrativo</label>
@@ -374,22 +364,24 @@
                     </div>
 
                     <div class="plan-chart" data-plan-chart role="img"
-                        aria-label="Gráfico ilustrativo: parcelas antes e depois da contemplação ao longo de um plano.">
+                        aria-label="Gráfico ilustrativo: parcelas menores antes da contemplação e parcelas recalculadas depois dela.">
                     </div>
                     <div class="plan-axis" aria-hidden="true"><span>Mês 1</span><span>Prazo do plano</span></div>
 
                     <div class="plan-legend">
                         <div class="legend-item"><i class="sw sw-wait"></i>
-                            <div><strong data-plan-before>17</strong> parcelas planejando e aguardando a contemplação
-                            </div>
+                            <div><strong data-plan-before>17</strong> parcelas <b>menores</b> enquanto você aguarda a
+                                contemplação</div>
                         </div>
                         <div class="legend-item"><i class="sw sw-ride"></i>
-                            <div><strong data-plan-after>31</strong> parcelas já com a moto na garagem</div>
+                            <div><strong data-plan-after>31</strong> parcelas <b>recalculadas</b> após a contemplação, já
+                                com a moto na garagem</div>
                         </div>
                     </div>
-                    <p class="disclaimer">Cenário ilustrativo, com prazo genérico de 48 meses e parcelas representadas
-                        de forma uniforme. Não representa prazo, valor, reajuste ou probabilidade real de contemplação.
-                        <span class="tbc" data-tbc>Prazos reais dos planos — a confirmar</span></p>
+                    <p class="disclaimer">Cenário ilustrativo de um plano de 48 meses com parcela reduzida até a
+                        contemplação. Depois dela, a parcela é recalculada sobre o saldo devedor e fica maior. O mês da
+                        contemplação não pode ser previsto — ela ocorre por sorteio ou lance, conforme as regras do grupo.
+                        Valores, prazos e percentuais variam conforme o plano contratado.</p>
                 </div>
 
                 <div class="plan-grid">
@@ -397,20 +389,20 @@
                     <article class="plan-card reveal">
                         <span class="badge badge-outline">Transparência</span>
                         <h3 class="h3">O que compõe a sua parcela</h3>
-                        <p class="muted">Antes de contratar, peça a composição completa. Em geral, a parcela reúne:</p>
+                        <p class="muted">A maior parte do que você paga <b>vira crédito para a sua moto</b>. O restante
+                            cobre a administração e a segurança do grupo:</p>
                         <div class="stack-bar" data-stack-bar aria-hidden="true">
                             <span class="seg seg-1"></span><span class="seg seg-2"></span><span
                                 class="seg seg-3"></span><span class="seg seg-4"></span>
                         </div>
                         <ul class="stack-list">
                             <li><i class="sw seg-1"></i><b>Fundo comum</b><span>valor que forma o crédito do
-                                    grupo</span><em class="tbc" data-tbc>% a confirmar</em></li>
+                                    grupo</span></li>
                             <li><i class="sw seg-2"></i><b>Taxa de administração</b><span>remuneração da
-                                    administradora</span><em class="tbc" data-tbc>% a confirmar</em></li>
+                                    administradora</span></li>
                             <li><i class="sw seg-3"></i><b>Fundo de reserva</b><span>quando previsto em
-                                    contrato</span><em class="tbc" data-tbc>% a confirmar</em></li>
-                            <li><i class="sw seg-4"></i><b>Seguro</b><span>quando houver</span><em class="tbc"
-                                    data-tbc>a confirmar</em></li>
+                                    contrato</span></li>
+                            <li><i class="sw seg-4"></i><b>Seguro</b><span>quando houver</span></li>
                         </ul>
                         <p class="disclaimer">Proporções da barra meramente ilustrativas.</p>
                     </article>
@@ -476,11 +468,11 @@
                         <p>O sistema de consórcios é regido pela Lei nº 11.795/2008 e fiscalizado pelo Banco Central do
                             Brasil.</p>
                     </article>
-                    <article class="feature feature-tbc reveal" data-tbc>
-                        <span class="tbc">A confirmar com o cliente</span>
-                        <h3>Diferenciais da concessionária</h3>
-                        <p>Itens da v1 ainda sem confirmação para uso: 3 anos de garantia exclusiva Teq Motors, entrega
-                            em até 500 km, avaliação 4,9 no Google, oficina e pós-venda próprios.</p>
+                    <article class="feature reveal">
+                        <svg class="ico feature-ico"><use href="#i-key" /></svg>
+                        <h3>Tecnologia, economia e qualidade</h3>
+                        <p>Motos Shineray feitas para o dia a dia, com atendimento de uma concessionária oficial em
+                            Uberlândia.</p>
                     </article>
                 </div>
             </div>
@@ -494,7 +486,7 @@
                         <p class="eyebrow reveal">Modelos</p>
                         <h2 id="modelos-title" class="display-lg reveal">Escolha a Shineray que vai ser sua.</h2>
                     </div>
-                    <p class="lead reveal">Toque em <b>“Quero esta”</b> e o modelo já entra na sua simulação.</p>
+                    <p class="lead reveal">Toque em <b>“Simular agora”</b> e o modelo já entra na sua simulação.</p>
                 </header>
 
                 <ul class="model-grid">
@@ -503,68 +495,68 @@
                         <img src="assets/img/motos/jet125-480.webp" srcset="assets/img/motos/jet125-480.webp 480w, assets/img/motos/jet125.webp 900w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray JET 125" width="480" height="331" loading="lazy" decoding="async">
                         <h3>JET 125</h3>
                         <p>A queridinha do Brasil</p>
-                        <button type="button" class="btn-model" data-model="JET 125">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="JET 125">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <span class="model-tag">Versatilidade</span>
                         <img src="assets/img/motos/jef170-480.webp" srcset="assets/img/motos/jef170-480.webp 480w, assets/img/motos/jef170.webp 900w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray JEF 170" width="480" height="333" loading="lazy" decoding="async">
                         <h3>JEF 170</h3>
                         <p>A evolução urbana</p>
-                        <button type="button" class="btn-model" data-model="JEF 170">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="JEF 170">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <span class="model-tag">Aventura</span>
                         <img src="assets/img/motos/newshy175-480.webp" srcset="assets/img/motos/newshy175-480.webp 480w, assets/img/motos/newshy175.webp 900w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray NEW SHI 175" width="480" height="342" loading="lazy" decoding="async">
                         <h3>NEW SHI 175</h3>
                         <p>Pronta pra qualquer terreno</p>
-                        <button type="button" class="btn-model" data-model="NEW SHI 175">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="NEW SHI 175">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <span class="model-tag">Performance</span>
                         <img src="assets/img/motos/storm-480.webp" srcset="assets/img/motos/storm-480.webp 480w, assets/img/motos/storm.webp 896w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray STORM" width="480" height="338" loading="lazy" decoding="async">
                         <h3>STORM</h3>
                         <p>Performance que impressiona</p>
-                        <button type="button" class="btn-model" data-model="STORM">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="STORM">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <img src="assets/img/motos/shy175-480.webp" srcset="assets/img/motos/shy175-480.webp 480w, assets/img/motos/shy175.webp 900w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray SHI 175 EFI" width="480" height="319" loading="lazy" decoding="async">
                         <h3>SHI 175 EFI</h3>
-                        <button type="button" class="btn-model" data-model="SHI 175 EFI">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="SHI 175 EFI">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <img src="assets/img/motos/shi250-480.webp" srcset="assets/img/motos/shi250-480.webp 480w, assets/img/motos/shi250.webp 900w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray SHI 250" width="480" height="318" loading="lazy" decoding="async">
                         <h3>SHI 250</h3>
-                        <button type="button" class="btn-model" data-model="SHI 250">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="SHI 250">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <img src="assets/img/motos/urban-480.webp" srcset="assets/img/motos/urban-480.webp 480w, assets/img/motos/urban.webp 900w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray URBAN" width="480" height="335" loading="lazy" decoding="async">
                         <h3>URBAN</h3>
-                        <button type="button" class="btn-model" data-model="URBAN">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="URBAN">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <img src="assets/img/motos/flash-480.webp" srcset="assets/img/motos/flash-480.webp 480w, assets/img/motos/flash.webp 900w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray FLASH" width="480" height="308" loading="lazy" decoding="async">
                         <h3>FLASH</h3>
-                        <button type="button" class="btn-model" data-model="FLASH">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="FLASH">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <img src="assets/img/motos/iron-480.webp" srcset="assets/img/motos/iron-480.webp 480w, assets/img/motos/iron.webp 900w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray IRON" width="480" height="308" loading="lazy" decoding="async">
                         <h3>IRON</h3>
-                        <button type="button" class="btn-model" data-model="IRON">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="IRON">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <img src="assets/img/motos/titanium-480.webp" srcset="assets/img/motos/titanium-480.webp 480w, assets/img/motos/titanium.webp 900w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray TITANIUM" width="480" height="307" loading="lazy" decoding="async">
                         <h3>TITANIUM</h3>
-                        <button type="button" class="btn-model" data-model="TITANIUM">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="TITANIUM">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <img src="assets/img/motos/denver-480.webp" srcset="assets/img/motos/denver-480.webp 480w, assets/img/motos/denver.webp 900w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray DENVER" width="480" height="304" loading="lazy" decoding="async">
                         <h3>DENVER</h3>
-                        <button type="button" class="btn-model" data-model="DENVER">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="DENVER">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                     <li class="model reveal">
                         <img src="assets/img/motos/sbm250s-480.webp" srcset="assets/img/motos/sbm250s-480.webp 480w, assets/img/motos/sbm250s.webp 670w" sizes="(min-width: 1024px) 280px, 50vw" alt="Shineray SBM 250S" width="480" height="290" loading="lazy" decoding="async">
                         <h3>SBM 250S</h3>
-                        <button type="button" class="btn-model" data-model="SBM 250S">Quero esta <svg class="ico"><use href="#i-arrow" /></svg></button>
+                        <button type="button" class="btn-model" data-model="SBM 250S">Simular agora <svg class="ico"><use href="#i-arrow" /></svg></button>
                     </li>
                 </ul>
                 <p class="note note-center reveal">Não encontrou o modelo ideal? <a class="link-inline" href="#simular"
@@ -584,13 +576,13 @@
                         Central antes de contratar.</p>
                 </div>
                 <ul class="partner-slots">
-                    <li class="partner-slot reveal" data-tbc>
+                    <li class="partner-slot reveal">
                         <span class="partner-role">Administradora de consórcio</span>
-                        <span class="partner-name tbc">Marca e CNPJ — a confirmar</span>
+                        <span class="partner-name">Autorizada e fiscalizada pelo Banco Central</span>
                     </li>
-                    <li class="partner-slot reveal" data-tbc>
-                        <span class="partner-role">Parceiro comercial</span>
-                        <span class="partner-name tbc">A confirmar</span>
+                    <li class="partner-slot reveal">
+                        <span class="partner-role">Regulamentação</span>
+                        <span class="partner-name">Lei nº 11.795/2008</span>
                     </li>
                     <li class="partner-slot reveal">
                         <span class="partner-role">Concessionária oficial</span>
@@ -625,7 +617,7 @@
                     </details>
                     <details class="faq-card reveal" data-faq-cat="custos">
                         <summary><span class="faq-num">02</span><span class="faq-q">Consórcio tem juros?</span><svg class="ico"><use href="#i-plus" /></svg></summary>
-                        <div class="faq-body"><p>Consórcio não é financiamento e não cobra juros de financiamento, mas há taxa de administração e podem existir outros encargos previstos no contrato, como fundo de reserva e seguro. Peça a composição completa dos custos antes de contratar.</p><p><span class="tbc" data-tbc>Percentuais da taxa de administração e encargos — a confirmar</span></p></div>
+                        <div class="faq-body"><p>Consórcio não é financiamento e não cobra juros de financiamento, mas há taxa de administração e podem existir outros encargos previstos no contrato, como fundo de reserva e seguro. Peça a composição completa dos custos antes de contratar.</p></div>
                     </details>
                     <details class="faq-card reveal" data-faq-cat="contemplacao">
                         <summary><span class="faq-num">03</span><span class="faq-q">Quando posso receber a carta de crédito?</span><svg class="ico"><use href="#i-plus" /></svg></summary>
@@ -633,19 +625,19 @@
                     </details>
                     <details class="faq-card reveal" data-faq-cat="contemplacao">
                         <summary><span class="faq-num">04</span><span class="faq-q">O que é o lance?</span><svg class="ico"><use href="#i-plus" /></svg></summary>
-                        <div class="faq-body"><p>É uma oferta feita na assembleia para tentar antecipar a contemplação. As modalidades e regras de lance são definidas pelo grupo e pelo contrato. Ofertar lance não garante a contemplação.</p><p><span class="tbc" data-tbc>Modalidades de lance disponíveis — a confirmar</span></p></div>
+                        <div class="faq-body"><p>É uma oferta feita na assembleia para tentar antecipar a contemplação. As modalidades e regras de lance são definidas pelo grupo e pelo contrato. Ofertar lance não garante a contemplação.</p></div>
                     </details>
                     <details class="faq-card reveal" data-faq-cat="custos">
                         <summary><span class="faq-num">05</span><span class="faq-q">A parcela pode mudar ao longo do plano?</span><svg class="ico"><use href="#i-plus" /></svg></summary>
-                        <div class="faq-body"><p>O contrato pode prever atualização dos valores para manter o poder de compra da carta de crédito. Confirme índice, frequência e condições com a administradora.</p><p><span class="tbc" data-tbc>Índice e periodicidade de reajuste — a confirmar</span></p></div>
+                        <div class="faq-body"><p>O contrato pode prever atualização dos valores para manter o poder de compra da carta de crédito. Confirme índice, frequência e condições com a administradora.</p></div>
                     </details>
                     <details class="faq-card reveal" data-faq-cat="custos">
                         <summary><span class="faq-num">06</span><span class="faq-q">Quais prazos e valores de parcela estão disponíveis?</span><svg class="ico"><use href="#i-plus" /></svg></summary>
-                        <div class="faq-body"><p>Os prazos e valores dependem dos grupos disponíveis no momento. Um especialista apresenta as opções compatíveis com a parcela que você indicar.</p><p><span class="tbc" data-tbc>Prazos e faixas de parcela dos planos — a confirmar</span></p></div>
+                        <div class="faq-body"><p>Os prazos e valores dependem dos grupos disponíveis no momento. Um especialista apresenta as opções compatíveis com a parcela que você indicar.</p></div>
                     </details>
                     <details class="faq-card reveal" data-faq-cat="moto">
                         <summary><span class="faq-num">07</span><span class="faq-q">Posso escolher outro modelo depois de contemplado?</span><svg class="ico"><use href="#i-plus" /></svg></summary>
-                        <div class="faq-body"><p>As regras de utilização da carta de crédito são definidas no contrato. Pergunte ao especialista quais modelos e condições se aplicam ao seu plano.</p><p><span class="tbc" data-tbc>Regras de uso do crédito entre modelos — a confirmar</span></p></div>
+                        <div class="faq-body"><p>As regras de utilização da carta de crédito são definidas no contrato. Pergunte ao especialista quais modelos e condições se aplicam ao seu plano.</p></div>
                     </details>
                     <details class="faq-card reveal" data-faq-cat="passos">
                         <summary><span class="faq-num">08</span><span class="faq-q">Como descubro qual plano combina comigo?</span><svg class="ico"><use href="#i-plus" /></svg></summary>
@@ -653,7 +645,7 @@
                     </details>
                     <details class="faq-card reveal" data-faq-cat="passos">
                         <summary><span class="faq-num">09</span><span class="faq-q">Quais são os próximos passos para participar?</span><svg class="ico"><use href="#i-plus" /></svg></summary>
-                        <div class="faq-body"><ol class="faq-steps"><li>Envie sua simulação ou fale com a equipe pelo WhatsApp.</li><li>Receba as opções de plano com custos detalhados.</li><li>Analise o contrato com calma.</li><li>Faça a adesão e comece a participar das assembleias.</li></ol><p><span class="tbc" data-tbc>Documentos necessários para adesão — a confirmar</span></p></div>
+                        <div class="faq-body"><ol class="faq-steps"><li>Envie sua simulação pelo formulário no topo da página.</li><li>Receba as opções de plano com custos detalhados.</li><li>Analise o contrato com calma.</li><li>Faça a adesão e comece a participar das assembleias.</li></ol></div>
                     </details>
                 </div>
 
@@ -664,14 +656,13 @@
                         <p>Um especialista explica o plano, as taxas e as regras do grupo, sem compromisso.</p>
                     </div>
                     <div class="faq-help-actions">
-                        <a class="btn btn-primary" href="#simular" data-focus-form>Simular minha parcela <svg class="ico"><use href="#i-arrow" /></svg></a>
-                        <a class="btn btn-ghost-light js-wa" data-wa-context="faq" href="#" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa" /></svg> Perguntar no WhatsApp</a>
+                        <a class="btn btn-primary" href="#simular" data-focus-form>Simular agora <svg class="ico"><use href="#i-arrow" /></svg></a>
                     </div>
                 </aside>
             </div>
         </section>
 
-        <!-- 10. CHAMADA FINAL + FORMULÁRIO -->
+        <!-- 10. CHAMADA FINAL -->
         <section class="section final-cta" aria-labelledby="final-title">
             <div class="container final-grid">
                 <div class="final-copy">
@@ -680,60 +671,11 @@
                         cabe no seu mês.</h2>
                     <p class="lead lead-light reveal">Sem compromisso. Você recebe as opções de plano e decide com
                         calma.</p>
-                    <img class="final-moto parallax" src="assets/img/motos/iron.webp" alt="" width="900" 
-                        height="576" loading="lazy" decoding="async">
+                    <a class="btn btn-light reveal" href="#simular" data-focus-form>Simular agora <svg
+                            class="ico"><use href="#i-arrow" /></svg></a>
                 </div>
-                <form class="lead-form card-form reveal" novalidate data-form-origin="final">
-                    <div class="field">
-                        <label for="final-nome">Seu nome</label>
-                        <input id="final-nome" name="nome" type="text" autocomplete="name"
-                            placeholder="Como podemos te chamar?" required minlength="2">
-                        <p class="field-error" aria-live="polite"></p>
-                    </div>
-                    <div class="field">
-                        <label for="final-contato">WhatsApp</label>
-                        <input id="final-contato" name="contato" type="tel" inputmode="tel" autocomplete="tel"
-                            placeholder="(34) 99999-9999" required data-mask="phone">
-                        <p class="field-error" aria-live="polite"></p>
-                    </div>
-                    <div class="field">
-                        <label for="final-modelo">Modelo de interesse</label>
-                        <div class="select-wrap">
-                            <select id="final-modelo" name="modelo" required data-model-select>
-                                    <option value="">Selecione um modelo</option>
-                                    <option>JET 125</option>
-                                    <option>JEF 170</option>
-                                    <option>NEW SHI 175</option>
-                                    <option>STORM</option>
-                                    <option>SHI 175 EFI</option>
-                                    <option>SHI 250</option>
-                                    <option>URBAN</option>
-                                    <option>FLASH</option>
-                                    <option>IRON</option>
-                                    <option>TITANIUM</option>
-                                    <option>DENVER</option>
-                                    <option>SBM 250S</option>
-                                    <option value="Ainda não sei">Ainda não sei — quero ajuda</option>
-                                </select>
-                            <svg class="ico"><use href="#i-down" /></svg>
-                        </div>
-                        <p class="field-error" aria-live="polite"></p>
-                    </div>
-                    <div class="field field-range">
-                        <div class="range-head">
-                            <label for="final-parcela">Parcela desejada</label>
-                            <output for="final-parcela" class="range-output" data-range-output>R$ —</output>
-                        </div>
-                        <input id="final-parcela" name="parcela" type="range" data-parcela-range>
-                        <div class="range-scale" aria-hidden="true"><span data-range-min></span><span
-                                data-range-max></span></div>
-                    </div>
-                    <button class="btn btn-primary btn-block" type="submit">Quero minha simulação <svg
-                            class="ico"><use href="#i-arrow" /></svg></button>
-                    <p class="form-legal">Ao enviar, você concorda com a <a
-                            href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
-                    <div class="form-status" role="status" aria-live="polite" hidden></div>
-                </form>
+                <img class="final-moto parallax" src="assets/img/motos/iron.webp" alt="" width="900" height="576"
+                    loading="lazy" decoding="async">
             </div>
         </section>
     </main>
@@ -748,18 +690,17 @@
             <div>
                 <h3 class="footer-title">Atendimento</h3>
                 <p>Seg–Sex 9h–19h • Sáb 9h–13h</p>
-                <a class="link-inline js-wa" data-wa-context="footer" href="#" target="_blank" rel="noopener"><svg
-                        class="ico"><use href="#i-wa" /></svg> <span data-wa-display>WhatsApp</span></a>
+                <a class="link-inline" href="#simular" data-focus-form>Simular agora <svg
+                        class="ico"><use href="#i-arrow" /></svg></a>
             </div>
             <div>
                 <h3 class="footer-title">Links</h3>
-                <a href="https://instagram.com/teqmotorsuberlandia" target="_blank" rel="noopener">@teqmotorsuberlandia</a>
+                <a href="https://www.instagram.com/shineray.motodagenteuberlandia/" target="_blank" rel="noopener">@shineray.motodagenteuberlandia</a>
                 <a href="politica-de-privacidade.html">Política de Privacidade</a>
             </div>
         </div>
         <div class="container footer-legal">
-            <p>Consórcio administrado por <span class="tbc" data-tbc>administradora — a confirmar</span>, autorizada
-                pelo Banco Central do Brasil. Contemplação por sorteio ou lance, sem data garantida. Parcelas sujeitas a
+            <p>Consórcio administrado por administradora autorizada e fiscalizada pelo Banco Central do Brasil. Contemplação por sorteio ou lance, sem data garantida. Parcelas sujeitas a
                 atualização conforme contrato. Leia o regulamento do grupo antes de contratar.</p>
             <div class="footer-bottom">
                 <span>©<span data-year>2026</span> Shineray Teq Motors. Todos os direitos reservados.</span>
@@ -783,8 +724,8 @@
         <button type="button" class="btn btn-primary btn-sm" data-cookie="accept">Aceitar</button>
     </div>
 
-    <script src="assets/js/config.js?v=2.1.0" defer></script>
-    <script src="assets/js/main.js?v=2.1.0" defer></script>
+    <script src="assets/js/config.js?v=2.2.0" defer></script>
+    <script src="assets/js/main.js?v=2.2.0" defer></script>
 </body>
 
 </html>

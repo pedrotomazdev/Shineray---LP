@@ -237,24 +237,6 @@ ol {
     color: #ff5a5f;
 }
 
-/* Marcador "a confirmar" — visível apenas para revisão do conceito */
-.tbc {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 2px 9px;
-    border: 1px dashed #c98a00;
-    border-radius: var(--pill);
-    background: #fff7e0;
-    color: #8a5a00;
-    font-size: .74rem;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: .01em;
-    line-height: 1.5;
-    white-space: nowrap;
-}
-
 /* ---------- Botões e links ---------- */
 
 .btn {
@@ -429,20 +411,6 @@ ol {
     gap: 18px;
 }
 
-.link-wa {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: .95rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: var(--ink-2);
-}
-
-.link-wa:hover {
-    color: var(--red);
-}
-
 /* ---------- Hero ---------- */
 
 .hero-dark {
@@ -548,22 +516,12 @@ ol {
     color: var(--muted);
 }
 
-.chip-value {
-    font-size: 1.9rem;
+.chip-msg {
+    font-size: 1.05rem;
     font-weight: 600;
-    letter-spacing: -0.03em;
-    color: var(--red);
-    font-variant-numeric: tabular-nums;
-    transition: transform .2s var(--ease);
-}
-
-.chip-value.is-bump {
-    transform: scale(1.06);
-}
-
-.chip-sub {
-    color: var(--muted);
-    font-size: .8rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    color: var(--ink);
 }
 
 .chip-b {
@@ -925,10 +883,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     line-height: 1.45;
 }
 
-.hint .tbc {
-    margin-bottom: 4px;
-}
-
 .form-legal {
     font-size: .8rem;
     color: var(--muted);
@@ -1155,6 +1109,46 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     margin-bottom: 32px;
 }
 
+.plan-sub {
+    margin-top: 10px;
+    max-width: 58ch;
+    color: var(--muted);
+    font-size: .98rem;
+}
+
+.plan-sub b {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.plan-tag {
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    transform: translateX(-50%);
+    padding: 4px 10px;
+    border-radius: var(--pill);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    font-size: .76rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: left .25s var(--ease), opacity .2s var(--ease);
+}
+
+.plan-tag-before {
+    color: var(--muted);
+}
+
+.plan-tag-after {
+    color: var(--red);
+    border-color: transparent;
+}
+
+.plan-tag.is-off {
+    opacity: 0;
+}
+
 .plan-control {
     display: grid;
     gap: 4px;
@@ -1250,6 +1244,11 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     margin-top: 28px;
 }
 
+.legend-item b {
+    font-weight: 600;
+    color: var(--ink);
+}
+
 .legend-item {
     display: flex;
     gap: 14px;
@@ -1329,22 +1328,22 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
 .seg-1 {
     background: var(--red);
-    flex: 7;
+    flex: 20;
 }
 
 .seg-2 {
     background: var(--ink);
-    flex: 1.6;
+    flex: 1.4;
 }
 
 .seg-3 {
     background: #8c8784;
-    flex: 1;
+    flex: .5;
 }
 
 .seg-4 {
     background: var(--wait);
-    flex: .8;
+    flex: .35;
 }
 
 .stack-list {
@@ -1354,7 +1353,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
 .stack-list li {
     display: grid;
-    grid-template-columns: 20px 1fr auto;
+    grid-template-columns: 20px 1fr;
     grid-template-rows: auto auto;
     column-gap: 10px;
     padding: 12px 0;
@@ -1375,12 +1374,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     grid-column: 2;
     color: var(--muted);
     font-size: .88rem;
-}
-
-.stack-list em {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-    align-self: center;
 }
 
 .fit-list {
@@ -1468,14 +1461,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .feature p {
     color: var(--muted);
     font-size: .96rem;
-}
-
-.feature-tbc {
-    background: repeating-linear-gradient(135deg, #fffdf6 0 12px, #fff9ea 12px 24px);
-}
-
-.feature-tbc .tbc {
-    margin-bottom: 22px;
 }
 
 /* 7. Modelos */
@@ -1596,10 +1581,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     border: 1px solid var(--line);
 }
 
-.partner-slot[data-tbc] {
-    border-style: dashed;
-}
-
 .partner-role {
     font-size: .76rem;
     font-weight: 600;
@@ -1612,11 +1593,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: -0.015em;
-}
-
-.partner-name.tbc {
-    align-self: flex-start;
-    font-size: .85rem;
 }
 
 /* 9. FAQ — filtros por tema + cards em duas colunas */
@@ -1838,16 +1814,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     margin-left: auto;
 }
 
-.btn-ghost-light {
-    background: transparent;
-    border-color: rgba(255, 255, 255, .28);
-    color: #fff;
-}
-
-.btn-ghost-light:hover {
-    border-color: #fff;
-}
-
 /* 10. CTA final */
 .final-cta {
     background: var(--red);
@@ -1870,15 +1836,24 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     align-items: center;
 }
 
-.final-moto {
-    width: min(560px, 100%);
-    margin-top: 40px;
-    filter: drop-shadow(0 30px 24px rgba(0, 0, 0, .3));
+.final-copy .btn {
+    margin-top: 36px;
 }
 
-.final-cta .card-form {
-    color: var(--ink);
-    border: 0;
+.btn-light {
+    background: #fff;
+    color: var(--red);
+}
+
+.btn-light:hover {
+    background: var(--dark);
+    color: #fff;
+}
+
+.final-moto {
+    width: min(620px, 100%);
+    justify-self: end;
+    filter: drop-shadow(0 30px 24px rgba(0, 0, 0, .3));
 }
 
 /* ---------- Rodapé ---------- */
@@ -2181,14 +2156,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
         width: 150px;
     }
 
-    .link-wa span {
-        display: none;
-    }
-
-    .header-actions .btn {
-        display: none;
-    }
-
     .hero-ctas .btn {
         width: 100%;
     }
@@ -2205,8 +2172,8 @@ input[type="range"]:focus-visible::-moz-range-thumb {
         min-width: 0;
     }
 
-    .chip-value {
-        font-size: 1.4rem;
+    .chip-msg {
+        font-size: .92rem;
     }
 
     .chip-b {
@@ -2286,17 +2253,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
         gap: 2px;
     }
 
-    .stack-list li {
-        grid-template-columns: 20px 1fr;
-    }
-
-    .stack-list em {
-        grid-column: 2;
-        grid-row: auto;
-        justify-self: start;
-        margin-top: 6px;
-    }
-
     .footer-grid {
         grid-template-columns: 1fr;
     }
@@ -2331,10 +2287,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     .faq-help-actions,
     .faq-help-actions .btn {
         width: 100%;
-    }
-
-    .tbc {
-        white-space: normal;
     }
 
     .float-cta {

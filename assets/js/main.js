@@ -9,24 +9,9 @@
     window.dataLayer = window.dataLayer || [];
     const track = (event, data = {}) => window.dataLayer.push({ event, ...data });
 
-    /* ---------------- WhatsApp contextualizado ---------------- */
-
-    const WA_MESSAGES = {
-        header: 'Olá! Quero saber mais sobre o consórcio de motos Shineray.',
-        hero: 'Olá! Quero falar com um especialista sobre o consórcio de motos Shineray.',
-        proposta: 'Olá! Tenho uma dúvida sobre como funciona o consórcio de motos Shineray.',
-        faq: 'Olá! Li as perguntas frequentes e ainda tenho uma dúvida sobre o consórcio Shineray.',
-        footer: 'Olá! Quero saber mais sobre o consórcio de motos Shineray.'
-    };
+    /* ---------------- WhatsApp (destino do envio do formulário) ---------------- */
 
     const waUrl = (text) => `https://wa.me/${CFG.whatsapp?.number || ''}?text=${encodeURIComponent(text)}`;
-
-    $$('.js-wa').forEach((link) => {
-        const ctx = link.dataset.waContext;
-        link.href = waUrl(WA_MESSAGES[ctx] || WA_MESSAGES.header);
-        link.addEventListener('click', () => track('whatsapp_click', { wa_context: ctx }));
-    });
-    $$('[data-wa-display]').forEach((el) => { el.textContent = CFG.whatsapp?.display || 'WhatsApp'; });
 
     /* ---------------- Formulários ---------------- */
 
@@ -35,7 +20,6 @@
     // Slider de parcela
     const P = CFG.parcela || { min: 200, max: 1200, step: 25, initial: 450 };
     const ranges = $$('[data-parcela-range]');
-    const mirrors = $$('[data-mirror-parcela]');
 
     const paintRange = (range) => {
         const v = Number(range.value);
@@ -49,18 +33,9 @@
     };
 
     const setParcela = (value, source) => {
-        let label = '';
         ranges.forEach((r) => {
             if (r !== source) r.value = value;
-            label = paintRange(r);
-        });
-        mirrors.forEach((m) => {
-            m.textContent = label;
-            if (!reduceMotion && source) {
-                m.classList.remove('is-bump');
-                void m.offsetWidth;
-                m.classList.add('is-bump');
-            }
+            paintRange(r);
         });
     };
 
@@ -74,7 +49,6 @@
         r.addEventListener('change', () => track('parcela_change', { parcela: Number(r.value) }));
     });
     setParcela(P.initial);
-    mirrors.forEach((m) => m.classList.remove('is-bump'));
 
     // Máscara de telefone (mantida da v1)
     $$('[data-mask="phone"]').forEach((input) => {
@@ -159,13 +133,20 @@
             };
             const button = $('button[type="submit"]', form);
 
-            // Integração ainda não configurada: não simulamos envio bem-sucedido.
+            // Sem endpoint de leads: o atendimento continua no WhatsApp com os dados preenchidos.
             if (!CFG.leadEndpoint) {
-                track('lead_form_blocked', { form_origin: data.origem, reason: 'endpoint_not_configured' });
-                setStatus(form, 'info',
-                    '<strong>Envio automático ainda não configurado</strong> (versão de conceito). ' +
-                    'Para não perder seu atendimento, continue pelo WhatsApp com seus dados já preenchidos.' +
-                    `<br><a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="${waUrl(leadMessage(data))}">Continuar no WhatsApp</a>`);
+                const url = waUrl(leadMessage(data));
+                track('lead_whatsapp', { form_origin: data.origem, modelo: data.modelo, parcela: data.parcela });
+                // Sem "noopener" na chamada para saber se o pop-up abriu; o vínculo é cortado logo abaixo
+                const win = window.open(url, '_blank');
+                if (win) win.opener = null;
+                setStatus(form, 'success',
+                    '<strong>Tudo certo!</strong> Abrimos o WhatsApp com a sua simulação para concluir o atendimento. ' +
+                    `Se a conversa não abriu, <a target="_blank" rel="noopener" href="${url}">toque aqui</a>.`);
+                if (win) {
+                    form.reset();
+                    setParcela(P.initial);
+                }
                 return;
             }
 
@@ -289,12 +270,32 @@
         flag.innerHTML = '<svg class="ico"><use href="#i-key"/></svg> Contemplação';
         chart.appendChild(flag);
 
+        // Alturas ilustrativas: parcela reduzida até a contemplação e recalculada depois dela
+        const H_BEFORE = 0.42;
+        const H_AFTER = 0.78;
+        const tag = (cls, text) => {
+            const t = document.createElement('span');
+            t.className = `plan-tag ${cls}`;
+            t.textContent = text;
+            chart.appendChild(t);
+            return t;
+        };
+        const tagBefore = tag('plan-tag-before', 'Parcela menor');
+        const tagAfter = tag('plan-tag-after', 'Parcela recalculada');
+        let chartIn = reduceMotion;
+
         const render = () => {
             const m = Number(planRange.value);
             bars.forEach((b, i) => {
                 b.classList.toggle('is-ride', i + 1 > m);
                 b.classList.toggle('is-mark', i + 1 === m);
+                if (chartIn) b.style.setProperty('--h', i + 1 > m ? H_AFTER : H_BEFORE);
             });
+            // Rótulos dentro das barras, centralizados em cada trecho; somem quando o trecho fica estreito
+            tagBefore.style.left = `${((m - 1) / 2 / TOTAL) * 100}%`;
+            tagBefore.classList.toggle('is-off', m < 9 || !chartIn);
+            tagAfter.style.left = `${((m + TOTAL) / 2 / TOTAL) * 100}%`;
+            tagAfter.classList.toggle('is-off', TOTAL - m < 11 || !chartIn);
             flag.style.left = `${((m - 0.5) / TOTAL) * 100}%`;
             flag.classList.toggle('is-end', m > TOTAL * 0.75);
             $('[data-plan-month]').textContent = m;
@@ -308,7 +309,10 @@
             render();
         });
         render();
-        onView([chart], () => bars.forEach((b) => b.style.setProperty('--h', 0.62)), { threshold: 0.3 });
+        onView([chart], () => {
+            chartIn = true;
+            render();
+        }, { threshold: 0.3 });
     }
 
     /* ---------------- FAQ (accordion com transição de altura) ---------------- */

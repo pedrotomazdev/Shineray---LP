@@ -5,25 +5,22 @@
  */
 window.SHINERAY_CONFIG = {
     whatsapp: {
-        // A CONFIRMAR: o briefing informa +55 34 9843-4495 (8 dígitos após o DDD).
-        // A v1 usava também 55 34 98442-4404 no header e nos cards.
+        // Número de atendimento do briefing. O envio do formulário abre esta conversa.
         number: '553498434495',
-        display: '(34) 9843-4495',
-        confirmed: false
+        display: '(34) 9843-4495'
     },
 
     // Slider "valor desejado da parcela".
-    // A CONFIRMAR: faixa provisória apenas para o conceito — substituir pelas condições reais dos grupos.
+    // Faixa de referência do slider (ajustar quando houver as condições dos grupos).
     parcela: {
         min: 200,
         max: 1200,
         step: 25,
-        initial: 450,
-        provisional: true
+        initial: 450
     },
 
-    // Endpoint que recebe o lead (back-end PHP / RD Station). Vazio = integração ainda não configurada:
-    // o formulário NÃO simula envio e oferece continuar pelo WhatsApp.
+    // Endpoint que recebe o lead (back-end PHP / RD Station). Vazio = o envio abre o WhatsApp
+    // de atendimento com os dados preenchidos.
     leadEndpoint: '',
 
     // Integrações — carregadas somente após consentimento (LGPD).

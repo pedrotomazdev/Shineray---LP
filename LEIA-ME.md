@@ -24,7 +24,7 @@ Lighthouse local (servidor com compressão), 22/10/2026: **100 / 100 / 100 / 100
 - Fonte Inter Tight hospedada em `assets/fonts` (subset latin, variável 400–700) com `preload` e fallback de métricas.
 - Elementos do hero sem animação de entrada (não atrasam o LCP); demais seções com `.reveal`.
 - Imagens WebP com `srcset`/`sizes`, `width`/`height` e `loading="lazy"` fora da primeira dobra.
-- CSS/JS versionados por query (`?v=2.1.0`) — **troque a versão a cada publicação**, pois o `vercel.json`
+- CSS/JS versionados por query (`?v=2.2.0`) — **troque a versão a cada publicação**, pois o `vercel.json`
   aplica cache de 1 ano (`immutable`) em `assets/css`, `assets/js` e `assets/fonts`.
 - SEO: title/description, canonical, Open Graph + Twitter (`assets/img/og-consorcio-shineray.jpg`, 1200×630),
   JSON-LD (Organization + WebPage), favicons, `robots.txt` e `sitemap.xml`.
@@ -37,21 +37,20 @@ Lighthouse local (servidor com compressão), 22/10/2026: **100 / 100 / 100 / 100
 3. Manter o `preload` da fonte e evitar que o tema carregue Google Fonts/Tailwind/CSS global nesta página.
 4. Imprimir `SHINERAY_CONFIG` via `wp_add_inline_script` a partir de campos do painel.
 
-## Marcadores "a confirmar"
+## Conteúdo genérico (validar com o cliente antes da versão final)
 
-Na página, tudo o que depende do cliente aparece com o selo amarelo `.tbc` / atributo `data-tbc`.
-Para ocultar os selos numa apresentação ao cliente: `.tbc { display: none }`.
+Os marcadores "a confirmar" foram retirados do site a pedido. No lugar, ficou texto genérico ou ilustrativo:
 
-| Item | Onde |
+| Item | Como está no site |
 | --- | --- |
-| Número do WhatsApp (briefing: 34 9843-4495, 8 dígitos; v1 também usava 34 98442-4404) | `config.js` |
-| Faixa do slider de parcela (provisória: R$ 200–1.200, passo 25) | `config.js` |
-| Administradora / parceiros (nome, CNPJ, logos) | seção Credibilidade, rodapé |
-| % taxa de administração, fundo de reserva, seguro | Planejamento, FAQ |
-| Prazos dos planos, índice e periodicidade de reajuste | Planejamento, FAQ |
-| Modalidades de lance, regras de uso do crédito entre modelos, documentos | FAQ |
-| Diferenciais da concessionária herdados da v1 (garantia 3 anos, entrega 500 km, nota 4,9, Fenabrave) | Diferenciais |
-| Endpoint de leads, GTM, Meta Pixel, RD Station | `config.js` |
+| WhatsApp de atendimento | `config.js`: (34) 9843-4495, do briefing — tem 8 dígitos após o DDD; testar se a conversa abre |
+| Faixa do slider | R$ 200 a R$ 1.200+, passo R$ 25 (`config.js`) |
+| Administradora | “autorizada e fiscalizada pelo Banco Central”, sem nome/CNPJ |
+| Gráfico de planejamento | plano ilustrativo de 48 meses com parcela reduzida até a contemplação |
+| Composição da parcela | proporções ilustrativas, sem percentuais |
+| Diferencial da concessionária | slogan do Instagram do cliente (“Tecnologia, economia e qualidade”) |
+| Instagram | @shineray.motodagenteuberlandia (perfil se apresenta como “Moto da Gente Uberlândia”) |
+| Envio do formulário | sem `leadEndpoint`, abre o WhatsApp com nome, modelo e parcela preenchidos |
 
 ## Removido da v1
 
@@ -61,9 +60,9 @@ endereço/menu “Lojas”, Tailwind via CDN e o CSS completo do tema WordPress.
 ## Formulário
 
 - Campos: nome, WhatsApp, modelo, parcela (slider). Validação com mensagens por campo.
-- Sem `leadEndpoint` configurado, **não simula envio**: avisa que a integração não está ativa e oferece
-  continuar pelo WhatsApp com os dados preenchidos.
-- Eventos no `dataLayer`: `lead_submit`, `lead_form_blocked`, `whatsapp_click`, `model_interest`,
+- Sem `leadEndpoint` configurado, o envio abre o WhatsApp de atendimento com os dados preenchidos
+  (o site não tem botões de WhatsApp; todas as chamadas levam ao formulário do topo).
+- Eventos no `dataLayer`: `lead_submit`, `lead_whatsapp`, `model_interest`, `faq_filter`,
   `parcela_change`, `faq_open`.
 - GTM, Pixel e RD só carregam após consentimento (Google Consent Mode v2 com padrão “denied”).
 - Aviso de cookies simplificado a pedido: apenas “Aceitar” + link da Política de Privacidade.
