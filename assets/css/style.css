@@ -4,6 +4,26 @@
    único acento cromático, cards planos. Inspiração: Jeton (Refero Styles).
    ========================================================================== */
 
+/* Fonte local (Inter Tight variável, subset latin — OFL) */
+@font-face {
+    font-family: "Inter Tight";
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("../fonts/inter-tight-latin-var.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Fallback com métricas próximas para reduzir o deslocamento (CLS) na troca de fonte */
+@font-face {
+    font-family: "Inter Tight Fallback";
+    src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
+    size-adjust: 98%;
+    ascent-override: 98%;
+    descent-override: 24%;
+    line-gap-override: 0%;
+}
+
 :root {
     --red: #e30613;
     --red-ink: #b8000f;
@@ -19,7 +39,7 @@
     --ride: #e30613;
     --wait: #d9d4d1;
 
-    --font: "Inter Tight", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font: "Inter Tight", "Inter Tight Fallback", system-ui, -apple-system, "Segoe UI", sans-serif;
 
     --r-sm: 10px;
     --r-md: 14px;
@@ -1024,7 +1044,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     color: var(--red);
 }
 
-.benefit-row h3 {
+.benefit-row .benefit-title {
     font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: -0.015em;

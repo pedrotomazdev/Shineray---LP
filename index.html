@@ -4,18 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff">
-    <title>Consórcio Shineray | Sua próxima moto começa com um plano</title>
+    <meta name="theme-color" content="#121212">
+    <title>Consórcio de Motos Shineray | Simule sua parcela</title>
     <meta name="description"
         content="Planeje sua próxima moto Shineray com consórcio: escolha a parcela que cabe no seu mês, participe do grupo e use o crédito quando for contemplado. Simule sem compromisso.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <!-- URL de produção: atualizar canonical/og:url/og:image ao publicar no domínio definitivo (WordPress) -->
+    <link rel="canonical" href="https://landingpage-shinray.vercel.app/">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="preload" as="image" href="assets/img/motos/storm.webp" fetchpriority="high">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Open Graph / redes sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Shineray Teq Motors">
+    <meta property="og:title" content="Consórcio de Motos Shineray | Simule sua parcela">
+    <meta property="og:description"
+        content="Escolha a parcela que cabe no seu mês e planeje sua próxima Shineray com consórcio. Simulação sem compromisso.">
+    <meta property="og:url" content="https://landingpage-shinray.vercel.app/">
+    <meta property="og:image" content="https://landingpage-shinray.vercel.app/assets/img/og-consorcio-shineray.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Consórcio de motos Shineray: sua próxima Shineray começa com um plano">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon.png" sizes="48x48" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Fonte hospedada localmente (sem requisição bloqueante a terceiros) -->
+    <link rel="preload" href="assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css?v=2.1.0">
     <script>document.documentElement.classList.add('js');</script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://landingpage-shinray.vercel.app/#org",
+                "name": "Shineray Teq Motors",
+                "url": "https://shinerayuberlandiamg.com.br/",
+                "logo": "https://landingpage-shinray.vercel.app/assets/img/logo-dark.png",
+                "sameAs": ["https://instagram.com/teqmotorsuberlandia"]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://landingpage-shinray.vercel.app/#webpage",
+                "url": "https://landingpage-shinray.vercel.app/",
+                "name": "Consórcio de Motos Shineray | Simule sua parcela",
+                "description": "Planeje sua próxima moto Shineray com consórcio: escolha a parcela que cabe no seu mês e simule sem compromisso.",
+                "inLanguage": "pt-BR",
+                "publisher": { "@id": "https://landingpage-shinray.vercel.app/#org" }
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -50,7 +93,7 @@
     <header class="site-header" id="topo">
         <div class="container header-inner">
             <a href="#topo" class="brand" aria-label="Shineray Teq Motors — início">
-                <img src="assets/img/logo-dark.png" alt="Shineray Teq Motors" width="586" height="71">
+                <img src="assets/img/logo-dark.webp" alt="Shineray Teq Motors" width="400" height="48">
             </a>
             <nav class="main-nav" aria-label="Principal">
                 <a href="#como-funciona">Como funciona</a>
@@ -59,7 +102,8 @@
                 <a href="#duvidas">Dúvidas</a>
             </nav>
             <div class="header-actions">
-                <a class="link-wa js-wa" data-wa-context="header" href="#" target="_blank" rel="noopener">
+                <a class="link-wa js-wa" data-wa-context="header" href="#" target="_blank" rel="noopener"
+                    aria-label="Falar no WhatsApp (abre em nova aba)">
                     <svg class="ico"><use href="#i-wa" /></svg><span>WhatsApp</span>
                 </a>
                 <a class="btn btn-primary btn-sm" href="#simular" data-focus-form>Simular parcela</a>
@@ -73,41 +117,41 @@
         <section class="hero hero-dark convert" aria-labelledby="hero-title">
             <div class="container convert-grid">
                 <div class="convert-copy">
-                    <p class="eyebrow eyebrow-light reveal">Consórcio de motos Shineray</p>
-                    <h1 id="hero-title" class="display-xl reveal">
+                    <p class="eyebrow eyebrow-light">Consórcio de motos Shineray</p>
+                    <h1 id="hero-title" class="display-xl">
                         Sua próxima Shineray começa com <em>um plano</em>.
                     </h1>
-                    <p class="lead lead-light reveal">
+                    <p class="lead lead-light">
                         No consórcio, você escolhe a parcela que cabe no seu mês, participa de um grupo e usa o crédito
                         para conquistar sua moto quando for contemplado. Sem juros de financiamento — com todos os
                         custos apresentados antes de você contratar.
                     </p>
                 <ol class="benefit-stack">
-                    <li class="benefit-row reveal">
+                    <li class="benefit-row">
                         <span class="benefit-num">01</span>
                         <div>
-                            <h3>Sem juros de financiamento</h3>
+                            <h2 class="benefit-title">Sem juros de financiamento</h2>
                             <p>O custo do consórcio é a taxa de administração e demais encargos previstos em contrato —
                                 apresentados antes da adesão.</p>
                         </div>
                     </li>
-                    <li class="benefit-row reveal">
+                    <li class="benefit-row">
                         <span class="benefit-num">02</span>
                         <div>
-                            <h3>Parcela que cabe no mês</h3>
+                            <h2 class="benefit-title">Parcela que cabe no mês</h2>
                             <p>Você parte do valor mensal que é confortável para você, e não do preço da moto.</p>
                         </div>
                     </li>
-                    <li class="benefit-row reveal">
+                    <li class="benefit-row">
                         <span class="benefit-num">03</span>
                         <div>
-                            <h3>Lance para buscar antecipação</h3>
+                            <h2 class="benefit-title">Lance para buscar antecipação</h2>
                             <p>Além do sorteio, é possível ofertar lance nas assembleias, conforme as regras do grupo.
                                 Lance não garante contemplação.</p>
                         </div>
                     </li>
                 </ol>
-                    <a class="link-inline link-light reveal js-wa" data-wa-context="hero" href="#"
+                    <a class="link-inline link-light js-wa" data-wa-context="hero" href="#"
                         target="_blank" rel="noopener">Prefere tirar uma dúvida antes? Fale no WhatsApp <svg
                             class="ico"><use href="#i-arrow" /></svg></a>
                 </div>
@@ -217,8 +261,10 @@
             <div class="container why-grid">
                 <div class="hero-visual reveal" aria-hidden="true">
                         <div class="hero-slab"></div>
-                        <img class="hero-moto parallax" src="assets/img/motos/storm.webp" alt="" width="896"
-                            height="630" fetchpriority="high">
+                        <img class="hero-moto parallax" src="assets/img/motos/storm.webp"
+                            srcset="assets/img/motos/storm-480.webp 480w, assets/img/motos/storm-640.webp 640w, assets/img/motos/storm.webp 896w"
+                            sizes="(min-width: 960px) 600px, 92vw" alt="" width="896" height="630" loading="lazy"
+                            decoding="async">
                         <div class="float-chip chip-a">
                             <span class="chip-label">Sua parcela</span>
                             <strong class="chip-value" data-mirror-parcela>R$ —</strong>
@@ -653,7 +699,22 @@
                     <div class="field">
                         <label for="final-modelo">Modelo de interesse</label>
                         <div class="select-wrap">
-                            <select id="final-modelo" name="modelo" required data-model-select></select>
+                            <select id="final-modelo" name="modelo" required data-model-select>
+                                    <option value="">Selecione um modelo</option>
+                                    <option>JET 125</option>
+                                    <option>JEF 170</option>
+                                    <option>NEW SHI 175</option>
+                                    <option>STORM</option>
+                                    <option>SHI 175 EFI</option>
+                                    <option>SHI 250</option>
+                                    <option>URBAN</option>
+                                    <option>FLASH</option>
+                                    <option>IRON</option>
+                                    <option>TITANIUM</option>
+                                    <option>DENVER</option>
+                                    <option>SBM 250S</option>
+                                    <option value="Ainda não sei">Ainda não sei — quero ajuda</option>
+                                </select>
                             <svg class="ico"><use href="#i-down" /></svg>
                         </div>
                         <p class="field-error" aria-live="polite"></p>
@@ -681,7 +742,7 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <img src="assets/img/logo-dark.png" alt="Shineray Teq Motors" width="586" height="71" loading="lazy">
+                <img src="assets/img/logo-dark.webp" alt="Shineray Teq Motors" width="400" height="48" loading="lazy" decoding="async">
                 <p>Concessionária oficial Shineray<br>CNPJ: 59.083.795/0001-91</p>
             </div>
             <div>
@@ -722,8 +783,8 @@
         <button type="button" class="btn btn-primary btn-sm" data-cookie="accept">Aceitar</button>
     </div>
 
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/config.js?v=2.1.0" defer></script>
+    <script src="assets/js/main.js?v=2.1.0" defer></script>
 </body>
 
 </html>

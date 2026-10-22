@@ -32,12 +32,6 @@
 
     const forms = $$('.lead-form');
     const heroSelect = $('#hero-modelo');
-
-    // O formulário final reaproveita as opções do principal (uma única fonte de modelos).
-    $$('[data-model-select]').forEach((select) => {
-        if (select !== heroSelect && !select.options.length) select.innerHTML = heroSelect.innerHTML;
-    });
-
     // Slider de parcela
     const P = CFG.parcela || { min: 200, max: 1200, step: 25, initial: 450 };
     const ranges = $$('[data-parcela-range]');

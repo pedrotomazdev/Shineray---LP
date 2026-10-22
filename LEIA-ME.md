@@ -16,6 +16,27 @@ politica-de-privacidade.html  cópia da v1 (usa landingpage.css e logo-dark.png 
 
 Rodar localmente: `python -m http.server 5500` e abrir http://localhost:5500.
 
+## Performance, SEO e deploy
+
+Lighthouse local (servidor com compressão), 22/10/2026: **100 / 100 / 100 / 100** em mobile e desktop
+(LCP 1,6 s mobile · CLS 0 · TBT 40 ms).
+
+- Fonte Inter Tight hospedada em `assets/fonts` (subset latin, variável 400–700) com `preload` e fallback de métricas.
+- Elementos do hero sem animação de entrada (não atrasam o LCP); demais seções com `.reveal`.
+- Imagens WebP com `srcset`/`sizes`, `width`/`height` e `loading="lazy"` fora da primeira dobra.
+- CSS/JS versionados por query (`?v=2.1.0`) — **troque a versão a cada publicação**, pois o `vercel.json`
+  aplica cache de 1 ano (`immutable`) em `assets/css`, `assets/js` e `assets/fonts`.
+- SEO: title/description, canonical, Open Graph + Twitter (`assets/img/og-consorcio-shineray.jpg`, 1200×630),
+  JSON-LD (Organization + WebPage), favicons, `robots.txt` e `sitemap.xml`.
+- Vercel: site estático, sem build. Importar o repositório (Framework Preset: Other) ou usar `vercel --prod`.
+
+### Ao migrar para o WordPress
+1. Trocar `https://landingpage-shinray.vercel.app/` pela URL definitiva (canonical, og:url, og:image, JSON-LD,
+   robots.txt, sitemap.xml) — ou deixar o Yoast/Rank Math gerar essas tags e remover as do `<head>`.
+2. Enfileirar `style.css`, `config.js` e `main.js` com `wp_enqueue_*` (versão = `filemtime`), `main.js` com `defer`.
+3. Manter o `preload` da fonte e evitar que o tema carregue Google Fonts/Tailwind/CSS global nesta página.
+4. Imprimir `SHINERAY_CONFIG` via `wp_add_inline_script` a partir de campos do painel.
+
 ## Marcadores "a confirmar"
 
 Na página, tudo o que depende do cliente aparece com o selo amarelo `.tbc` / atributo `data-tbc`.
