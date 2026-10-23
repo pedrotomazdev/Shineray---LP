@@ -33,8 +33,8 @@
     <!-- Fonte hospedada localmente (sem requisição bloqueante a terceiros) -->
     <link rel="preload" href="assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" as="image" href="assets/img/hero-fachada-hd-1024.webp" fetchpriority="high"
-        imagesrcset="assets/img/hero-fachada-hd-640.webp 640w, assets/img/hero-fachada-hd-800.webp 800w, assets/img/hero-fachada-hd-1024.webp 1024w, assets/img/hero-fachada-hd-1600.webp 1600w" imagesizes="100vw">
-    <link rel="stylesheet" href="assets/css/style.css?v=2.9.1">
+        imagesrcset="assets/img/hero-fachada-hd-640.webp 640w, assets/img/hero-fachada-hd-800.webp 800w, assets/img/hero-fachada-hd-1024.webp 1024w, assets/img/hero-fachada-hd-1600.webp 1600w" imagesizes="(min-width: 961px) 700px, 100vw">
+    <link rel="stylesheet" href="assets/css/style.css?v=3.0.2">
     <script>document.documentElement.classList.add('js');</script>
 
     <script type="application/ld+json">
@@ -109,172 +109,27 @@
 
     <main id="conteudo">
 
-        <!-- 2. HERO: proposta + benefícios + formulário -->
-        <section class="hero hero-dark convert" aria-labelledby="hero-title">
-            <img class="hero-bg" src="assets/img/hero-fachada-hd-1024.webp"
-                srcset="assets/img/hero-fachada-hd-640.webp 640w, assets/img/hero-fachada-hd-800.webp 800w, assets/img/hero-fachada-hd-1024.webp 1024w, assets/img/hero-fachada-hd-1600.webp 1600w" sizes="100vw"
-                alt="" width="1024" height="626" fetchpriority="high" decoding="async">
-            <div class="container convert-grid">
-                <div class="convert-copy">
-                    <p class="eyebrow eyebrow-light">Consórcio de motos Shineray</p>
-                    <h1 id="hero-title" class="display-xl">
-                        Sua próxima Shineray começa com <em>um plano</em>.
-                    </h1>
-                    <p class="lead lead-light">
-                        No consórcio, você escolhe a parcela que cabe no seu mês, participa de um grupo e usa o crédito
-                        para conquistar sua moto quando for contemplado. Sem juros de financiamento — com todos os
-                        custos apresentados antes de você contratar.
-                    </p>
-                <ol class="benefit-stack">
-                    <li class="benefit-row">
-                        <span class="benefit-num">01</span>
-                        <div>
-                            <h2 class="benefit-title">Sem juros de financiamento</h2>
-                            <p>O custo do consórcio é a taxa de administração e demais encargos previstos em contrato —
-                                apresentados antes da adesão.</p>
-                        </div>
-                    </li>
-                    <li class="benefit-row">
-                        <span class="benefit-num">02</span>
-                        <div>
-                            <h2 class="benefit-title">Parcela que cabe no mês</h2>
-                            <p>Você parte do valor mensal que é confortável para você, e não do preço da moto.</p>
-                        </div>
-                    </li>
-                    <li class="benefit-row">
-                        <span class="benefit-num">03</span>
-                        <div>
-                            <h2 class="benefit-title">Lance para buscar antecipação</h2>
-                            <p>Além do sorteio, é possível ofertar lance nas assembleias, conforme as regras do grupo.
-                                Lance não garante contemplação.</p>
-                        </div>
-                    </li>
-                </ol>
-                    <a class="link-inline link-light" href="#simular" data-focus-form>Simular agora <svg
-                            class="ico"><use href="#i-arrow" /></svg></a>
-                </div>
-
-                <!-- FORMULÁRIO PRINCIPAL -->
-                <aside class="convert-form" id="simular" aria-labelledby="form-title">
-                    <form class="lead-form card-form" novalidate data-form-origin="hero">
-                        <div class="form-head">
-                            <p class="eyebrow eyebrow-muted">Simulação sem compromisso</p>
-                            <h2 id="form-title" class="h3">Quanto cabe no seu mês?</h2>
-                            <p class="form-sub">Um especialista apresenta os planos compatíveis com a parcela que você
-                                escolher.</p>
-                        </div>
-
-                        <div class="field">
-                            <label for="hero-nome">Seu nome</label>
-                            <input id="hero-nome" name="nome" type="text" autocomplete="name"
-                                placeholder="Como podemos te chamar?" required minlength="2">
-                            <p class="field-error" aria-live="polite"></p>
-                        </div>
-
-                        <div class="field">
-                            <label for="hero-contato">WhatsApp</label>
-                            <input id="hero-contato" name="contato" type="tel" inputmode="tel" autocomplete="tel"
-                                placeholder="(34) 99999-9999" required data-mask="phone">
-                            <p class="field-error" aria-live="polite"></p>
-                        </div>
-
-                        <div class="field">
-                            <label for="hero-modelo">Modelo de interesse</label>
-                            <div class="select-wrap">
-                                <select id="hero-modelo" name="modelo" required data-model-select>
-                                    <option value="">Selecione um modelo</option>
-                                    <option>JET 125</option>
-                                    <option>JEF 170</option>
-                                    <option>NEW SHI 175</option>
-                                    <option>STORM</option>
-                                    <option>SHI 175 EFI</option>
-                                    <option>SHI 250</option>
-                                    <option>URBAN</option>
-                                    <option>FLASH</option>
-                                    <option>IRON</option>
-                                    <option>TITANIUM</option>
-                                    <option>DENVER</option>
-                                    <option>SBM 250S</option>
-                                    <option value="Ainda não sei">Ainda não sei — quero ajuda</option>
-                                </select>
-                                <svg class="ico"><use href="#i-down" /></svg>
-                            </div>
-                            <p class="field-error" aria-live="polite"></p>
-                        </div>
-
-                        <div class="field field-range">
-                            <div class="range-head">
-                                <label for="hero-parcela">Parcela desejada</label>
-                                <output for="hero-parcela" class="range-output" data-range-output>R$ —</output>
-                            </div>
-                            <input id="hero-parcela" name="parcela" type="range" data-parcela-range
-                                aria-describedby="hero-parcela-hint">
-                            <div class="range-scale" aria-hidden="true"><span data-range-min></span><span
-                                    data-range-max></span></div>
-                            <p id="hero-parcela-hint" class="hint">
-                                Valor de referência para a conversa; o plano final depende das condições do grupo.
-                            </p>
-                        </div>
-
-                        <button class="btn btn-primary btn-block" type="submit">
-                            Quero minha simulação <svg class="ico"><use href="#i-arrow" /></svg>
-                        </button>
-                        <p class="form-legal">Ao enviar, o atendimento continua no WhatsApp. Seus dados são usados
-                            apenas para o atendimento sobre o consórcio,
-                            conforme a <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
-                        <div class="form-status" role="status" aria-live="polite" hidden></div>
-                    </form>
-                </aside>
-            </div>
-        </section>
-
-        <!-- 2b. DESTAQUES (segunda seção) -->
-        <section class="highlights" aria-label="Destaques do consórcio">
-            <ul class="container highlight-grid">
-                <li class="highlight reveal">
-                    <span class="highlight-ico"><svg class="ico"><use href="#i-wallet" /></svg></span>
-                    <h3>Parcela no seu orçamento</h3>
-                    <p>Você parte do valor mensal confortável para você.</p>
-                </li>
-                <li class="highlight reveal">
-                    <span class="highlight-ico"><svg class="ico"><use href="#i-gavel" /></svg></span>
-                    <h3>Sorteio ou lance</h3>
-                    <p>Contemplações nas assembleias, conforme as regras do grupo.</p>
-                </li>
-                <li class="highlight reveal">
-                    <span class="highlight-ico"><svg class="ico"><use href="#i-receipt" /></svg></span>
-                    <h3>Custos às claras</h3>
-                    <p>Taxas e encargos apresentados antes de você contratar.</p>
-                </li>
-                <li class="highlight highlight-accent reveal">
-                    <strong class="highlight-num"><span data-count="12">12</span></strong>
-                    <h3>modelos Shineray</h3>
-                    <a class="link-inline link-light" href="#modelos">Ver modelos <svg class="ico"><use href="#i-arrow" /></svg></a>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 2c. HERO — VARIANTE B (proposta para comparação): foto da loja inteira, texto e formulário -->
-        <section class="hero-b" aria-labelledby="hero-b-title">
+        <!-- 2. HERO: texto + foto da loja + formulário -->
+        <section class="hero-b" aria-labelledby="hero-title">
             <div class="container hero-b-grid">
                 <div class="hero-b-main">
                     <div class="hero-b-copy">
-                        <p class="eyebrow reveal">Consórcio de motos Shineray</p>
-                        <h2 id="hero-b-title" class="display-xl reveal">
+                        <p class="eyebrow">Consórcio de motos Shineray</p>
+                        <h1 id="hero-title" class="display-xl">
                             Sua próxima Shineray começa com <em>um plano</em>.
-                        </h2>
-                        <p class="lead reveal">
+                        </h1>
+                        <p class="lead">
                             No consórcio, você escolhe a parcela que cabe no seu mês, participa de um grupo e usa o
                             crédito para conquistar sua moto quando for contemplado. Sem juros de financiamento — com
                             todos os custos apresentados antes de você contratar.
                         </p>
                     </div>
 
-                    <figure class="hero-b-photo reveal">
+                    <figure class="hero-b-photo">
                         <img src="assets/img/hero-fachada-hd-1024.webp"
                             srcset="assets/img/hero-fachada-hd-640.webp 640w, assets/img/hero-fachada-hd-800.webp 800w, assets/img/hero-fachada-hd-1024.webp 1024w, assets/img/hero-fachada-hd-1600.webp 1600w"
                             sizes="(min-width: 961px) 700px, 100vw" alt="Fachada da fábrica Shineray" width="1024"
-                            height="626" loading="lazy" decoding="async">
+                            height="626" fetchpriority="high" decoding="async">
                         <!-- passe o mouse (ou foque com Tab) em um benefício: o detalhe abre no centro da foto -->
                         <ol class="hero-b-benefits">
                             <li tabindex="0">
@@ -305,33 +160,34 @@
                     </figure>
                 </div>
 
-                <aside class="hero-b-form" aria-labelledby="form-title-b">
-                        <form class="lead-form card-form" novalidate data-form-origin="hero-b">
+                <!-- FORMULÁRIO PRINCIPAL -->
+                <aside class="hero-b-form" id="simular" aria-labelledby="form-title">
+                        <form class="lead-form card-form" novalidate data-form-origin="hero">
                             <div class="form-head">
                                 <p class="eyebrow eyebrow-muted">Simulação sem compromisso</p>
-                                <h2 id="form-title-b" class="h3">Quanto cabe no seu mês?</h2>
+                                <h2 id="form-title" class="h3">Quanto cabe no seu mês?</h2>
                                 <p class="form-sub">Um especialista apresenta os planos compatíveis com a parcela que você
                                     escolher.</p>
                             </div>
 
                             <div class="field">
-                                <label for="herob-nome">Seu nome</label>
-                                <input id="herob-nome" name="nome" type="text" autocomplete="name"
+                                <label for="hero-nome">Seu nome</label>
+                                <input id="hero-nome" name="nome" type="text" autocomplete="name"
                                     placeholder="Como podemos te chamar?" required minlength="2">
                                 <p class="field-error" aria-live="polite"></p>
                             </div>
 
                             <div class="field">
-                                <label for="herob-contato">WhatsApp</label>
-                                <input id="herob-contato" name="contato" type="tel" inputmode="tel" autocomplete="tel"
+                                <label for="hero-contato">WhatsApp</label>
+                                <input id="hero-contato" name="contato" type="tel" inputmode="tel" autocomplete="tel"
                                     placeholder="(34) 99999-9999" required data-mask="phone">
                                 <p class="field-error" aria-live="polite"></p>
                             </div>
 
                             <div class="field">
-                                <label for="herob-modelo">Modelo de interesse</label>
+                                <label for="hero-modelo">Modelo de interesse</label>
                                 <div class="select-wrap">
-                                    <select id="herob-modelo" name="modelo" required data-model-select>
+                                    <select id="hero-modelo" name="modelo" required data-model-select>
                                         <option value="">Selecione um modelo</option>
                                         <option>JET 125</option>
                                         <option>JEF 170</option>
@@ -354,14 +210,14 @@
 
                             <div class="field field-range">
                                 <div class="range-head">
-                                    <label for="herob-parcela">Parcela desejada</label>
-                                    <output for="herob-parcela" class="range-output" data-range-output>R$ —</output>
+                                    <label for="hero-parcela">Parcela desejada</label>
+                                    <output for="hero-parcela" class="range-output" data-range-output>R$ —</output>
                                 </div>
-                                <input id="herob-parcela" name="parcela" type="range" data-parcela-range
-                                    aria-describedby="herob-parcela-hint">
+                                <input id="hero-parcela" name="parcela" type="range" data-parcela-range
+                                    aria-describedby="hero-parcela-hint">
                                 <div class="range-scale" aria-hidden="true"><span data-range-min></span><span
                                         data-range-max></span></div>
-                                <p id="herob-parcela-hint" class="hint">
+                                <p id="hero-parcela-hint" class="hint">
                                     Valor de referência para a conversa; o plano final depende das condições do grupo.
                                 </p>
                             </div>
@@ -376,6 +232,32 @@
                         </form>
                 </aside>
             </div>
+        </section>
+
+        <!-- 2b. DESTAQUES (segunda seção) -->
+        <section class="highlights" aria-label="Destaques do consórcio">
+            <ul class="container highlight-grid">
+                <li class="highlight reveal">
+                    <span class="highlight-ico"><svg class="ico"><use href="#i-wallet" /></svg></span>
+                    <h3>Parcela no seu orçamento</h3>
+                    <p>Você parte do valor mensal confortável para você.</p>
+                </li>
+                <li class="highlight reveal">
+                    <span class="highlight-ico"><svg class="ico"><use href="#i-gavel" /></svg></span>
+                    <h3>Sorteio ou lance</h3>
+                    <p>Contemplações nas assembleias, conforme as regras do grupo.</p>
+                </li>
+                <li class="highlight reveal">
+                    <span class="highlight-ico"><svg class="ico"><use href="#i-receipt" /></svg></span>
+                    <h3>Custos às claras</h3>
+                    <p>Taxas e encargos apresentados antes de você contratar.</p>
+                </li>
+                <li class="highlight highlight-accent reveal">
+                    <strong class="highlight-num"><span data-count="12">12</span></strong>
+                    <h3>modelos Shineray</h3>
+                    <a class="link-inline link-light" href="#modelos">Ver modelos <svg class="ico"><use href="#i-arrow" /></svg></a>
+                </li>
+            </ul>
         </section>
 
         <!-- 3. POR QUE CONSÓRCIO (reforço + moto em destaque) -->
@@ -866,8 +748,8 @@
         <button type="button" class="btn btn-primary btn-sm" data-cookie="accept">Aceitar</button>
     </div>
 
-    <script src="assets/js/config.js?v=2.9.1" defer></script>
-    <script src="assets/js/main.js?v=2.9.1" defer></script>
+    <script src="assets/js/config.js?v=3.0.2" defer></script>
+    <script src="assets/js/main.js?v=3.0.2" defer></script>
 </body>
 
 </html>
