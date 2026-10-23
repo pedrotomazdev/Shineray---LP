@@ -421,18 +421,44 @@ ol {
     padding: clamp(48px, 7vw, 96px) 0 clamp(40px, 5vw, 64px);
 }
 
-/* Faixas vermelhas discretas que remetem ao "chevron" da marca */
+/* Foto da fábrica Shineray como fundo do hero */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 65% 40%;
+    z-index: 0;
+}
+
+/* Desktop: foto deslocada para a direita (letreiro atrás do formulário, não do título) */
+@media (min-width: 961px) {
+    .hero-bg {
+        left: auto;
+        right: 0;
+        width: 72%;
+        object-position: 40% 35%;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 35%);
+        mask-image: linear-gradient(90deg, transparent 0, #000 35%);
+    }
+}
+
+/* Sobreposição escura para manter o texto branco legível; funde com a faixa de destaques abaixo */
 .hero-dark::before {
     content: "";
     position: absolute;
-    inset: 0 -10% 0 auto;
-    width: 46%;
-    background: linear-gradient(115deg, transparent 0 40%, rgba(227, 6, 19, .14) 40% 46%, transparent 46% 52%, rgba(227, 6, 19, .07) 52% 55%, transparent 55%);
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(18, 18, 18, .86) 0%, rgba(18, 18, 18, .62) 45%, rgba(18, 18, 18, .2) 100%),
+        linear-gradient(180deg, rgba(18, 18, 18, 0) 55%, var(--dark) 100%);
     pointer-events: none;
+    z-index: 1;
 }
 
 .hero-dark .container {
     position: relative;
+    z-index: 2;
 }
 
 .hero-dark .display-xl {
@@ -2201,6 +2227,16 @@ a:focus-visible .tool::after {
         order: -1;
     }
 
+    /* Hero empilhado: foto só na parte de cima, com véu mais forte sob o texto */
+    .hero-bg {
+        height: min(100%, 760px);
+        object-position: 60% 20%;
+    }
+
+    .hero-dark::before {
+        background: linear-gradient(180deg, rgba(18, 18, 18, .74) 0, rgba(18, 18, 18, .84) 380px, var(--dark) 760px);
+    }
+
     /* Mobile: formulário logo após o texto de apoio; benefícios depois */
     .convert-grid {
         gap: 0;
@@ -2218,10 +2254,6 @@ a:focus-visible .tool::after {
     .convert .benefit-stack,
     .convert-copy > .link-inline {
         order: 2;
-    }
-
-    .hero-dark::before {
-        width: 90%;
     }
 
     .highlight-grid {

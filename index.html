@@ -32,7 +32,9 @@
 
     <!-- Fonte hospedada localmente (sem requisição bloqueante a terceiros) -->
     <link rel="preload" href="assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/css/style.css?v=2.3.1">
+    <link rel="preload" as="image" href="assets/img/hero-fabrica-960.webp" fetchpriority="high"
+        imagesrcset="assets/img/hero-fabrica-640.webp 640w, assets/img/hero-fabrica-960.webp 960w" imagesizes="100vw">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.4.4">
     <script>document.documentElement.classList.add('js');</script>
 
     <script type="application/ld+json">
@@ -109,6 +111,9 @@
 
         <!-- 2. HERO: proposta + benefícios + formulário -->
         <section class="hero hero-dark convert" aria-labelledby="hero-title">
+            <img class="hero-bg" src="assets/img/hero-fabrica-960.webp"
+                srcset="assets/img/hero-fabrica-640.webp 640w, assets/img/hero-fabrica-960.webp 960w" sizes="100vw"
+                alt="" width="960" height="640" fetchpriority="high" decoding="async">
             <div class="container convert-grid">
                 <div class="convert-copy">
                     <p class="eyebrow eyebrow-light">Consórcio de motos Shineray</p>
@@ -737,8 +742,8 @@
         <button type="button" class="btn btn-primary btn-sm" data-cookie="accept">Aceitar</button>
     </div>
 
-    <script src="assets/js/config.js?v=2.3.1" defer></script>
-    <script src="assets/js/main.js?v=2.3.1" defer></script>
+    <script src="assets/js/config.js?v=2.4.4" defer></script>
+    <script src="assets/js/main.js?v=2.4.4" defer></script>
 </body>
 
 </html>
