@@ -428,32 +428,32 @@ ol {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 65% 40%;
+    object-position: 20% 30%;
     z-index: 0;
 }
 
-/* Desktop: foto deslocada para a direita (letreiro atrás do formulário, não do título) */
-@media (min-width: 961px) {
-    .hero-bg {
-        left: auto;
-        right: 0;
-        width: 72%;
-        object-position: 40% 35%;
-        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 35%);
-        mask-image: linear-gradient(90deg, transparent 0, #000 35%);
-    }
-}
-
-/* Sobreposição escura para manter o texto branco legível; funde com a faixa de destaques abaixo */
+/* Véu escuro só onde há texto; à direita a fachada aparece quase sem filtro */
 .hero-dark::before {
     content: "";
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(18, 18, 18, .86) 0%, rgba(18, 18, 18, .62) 45%, rgba(18, 18, 18, .2) 100%),
-        linear-gradient(180deg, rgba(18, 18, 18, 0) 55%, var(--dark) 100%);
+        linear-gradient(90deg, rgba(18, 18, 18, .9) 0%, rgba(18, 18, 18, .78) 34%, rgba(18, 18, 18, .2) 50%, rgba(18, 18, 18, .1) 100%),
+        linear-gradient(180deg, rgba(18, 18, 18, .25) 0%, rgba(18, 18, 18, 0) 30%, rgba(18, 18, 18, 0) 62%, var(--dark) 100%);
     pointer-events: none;
     z-index: 1;
+}
+
+/* Desktop: fachada à direita, letreiro entre o texto e o formulário */
+@media (min-width: 961px) {
+    .hero-bg {
+        left: auto;
+        right: 0;
+        width: 80%;
+        object-position: 0% 30%;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26%);
+        mask-image: linear-gradient(90deg, transparent 0, #000 26%);
+    }
 }
 
 .hero-dark .container {
@@ -2230,11 +2230,11 @@ a:focus-visible .tool::after {
     /* Hero empilhado: foto só na parte de cima, com véu mais forte sob o texto */
     .hero-bg {
         height: min(100%, 760px);
-        object-position: 60% 20%;
+        object-position: 100% 30%; /* fachada de vidro; letreiro fora do recorte para não brigar com o título */
     }
 
     .hero-dark::before {
-        background: linear-gradient(180deg, rgba(18, 18, 18, .74) 0, rgba(18, 18, 18, .84) 380px, var(--dark) 760px);
+        background: linear-gradient(180deg, rgba(18, 18, 18, .6) 0, rgba(18, 18, 18, .78) 380px, var(--dark) 760px);
     }
 
     /* Mobile: formulário logo após o texto de apoio; benefícios depois */
