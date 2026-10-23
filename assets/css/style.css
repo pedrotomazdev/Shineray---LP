@@ -421,39 +421,53 @@ ol {
     padding: clamp(48px, 7vw, 96px) 0 clamp(40px, 5vw, 64px);
 }
 
-/* Foto da fábrica Shineray como fundo do hero */
+/* Foto da fábrica Shineray (espelhada) como fundo do hero, inteira e sem degradê lateral */
 .hero-bg {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 20% 30%;
+    object-position: 0% 30%;
     z-index: 0;
 }
 
-/* Véu escuro só onde há texto; à direita a fachada aparece quase sem filtro */
+/* Película leve e uniforme (a fachada continua exposta) + fusão com a faixa de destaques */
 .hero-dark::before {
     content: "";
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(18, 18, 18, .9) 0%, rgba(18, 18, 18, .78) 34%, rgba(18, 18, 18, .2) 50%, rgba(18, 18, 18, .1) 100%),
-        linear-gradient(180deg, rgba(18, 18, 18, .25) 0%, rgba(18, 18, 18, 0) 30%, rgba(18, 18, 18, 0) 62%, var(--dark) 100%);
+        linear-gradient(180deg, rgba(18, 18, 18, .42) 0%, rgba(18, 18, 18, .34) 45%, rgba(18, 18, 18, .5) 75%, var(--dark) 100%);
     pointer-events: none;
     z-index: 1;
 }
 
-/* Desktop: fachada à direita, letreiro entre o texto e o formulário */
-@media (min-width: 961px) {
-    .hero-bg {
-        left: auto;
-        right: 0;
-        width: 80%;
-        object-position: 0% 30%;
-        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26%);
-        mask-image: linear-gradient(90deg, transparent 0, #000 26%);
-    }
+/* Legibilidade do texto sobre a foto sem escurecer a imagem */
+.hero-dark .convert-copy h1,
+.hero-dark .convert-copy .eyebrow,
+.hero-dark .convert-copy .lead,
+.hero-dark .convert-copy .benefit-title,
+.hero-dark .convert-copy .benefit-row p {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .55), 0 2px 8px rgba(0, 0, 0, .35);
+}
+
+.hero-dark .eyebrow-light {
+    color: #fff;
+}
+
+.hero-dark .eyebrow-light::before {
+    background: var(--red);
+}
+
+.hero-dark .lead-light,
+.hero-dark .benefit-row p {
+    color: rgba(255, 255, 255, .92);
+}
+
+.hero-dark .benefit-stack,
+.hero-dark .benefit-row {
+    border-color: rgba(255, 255, 255, .28);
 }
 
 .hero-dark .container {
@@ -2227,14 +2241,14 @@ a:focus-visible .tool::after {
         order: -1;
     }
 
-    /* Hero empilhado: foto só na parte de cima, com véu mais forte sob o texto */
+    /* Hero empilhado: foto no topo (fachada de vidro), fundindo no escuro antes do formulário */
     .hero-bg {
         height: min(100%, 760px);
-        object-position: 100% 30%; /* fachada de vidro; letreiro fora do recorte para não brigar com o título */
+        object-position: 0% 30%;
     }
 
     .hero-dark::before {
-        background: linear-gradient(180deg, rgba(18, 18, 18, .6) 0, rgba(18, 18, 18, .78) 380px, var(--dark) 760px);
+        background: linear-gradient(180deg, rgba(18, 18, 18, .4) 0, rgba(18, 18, 18, .5) 420px, var(--dark) 760px);
     }
 
     /* Mobile: formulário logo após o texto de apoio; benefícios depois */
