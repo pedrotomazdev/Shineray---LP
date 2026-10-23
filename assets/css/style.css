@@ -747,11 +747,18 @@ ol {
 
 .hero-b-photo {
     position: relative;
+    display: grid;
     margin: 36px 0 0;
     border-radius: var(--r-xl);
     overflow: hidden;
     aspect-ratio: 1600 / 978;
     background: #dfe7ee;
+}
+
+/* foto e faixa de benefícios na mesma célula: o detalhe se centraliza na foto inteira */
+.hero-b-photo > img,
+.hero-b-benefits {
+    grid-area: 1 / 1;
 }
 
 .hero-b-photo img {
@@ -765,14 +772,29 @@ ol {
     transform: scale(1.03);
 }
 
-.hero-b-benefits {
+/* véu que aparece quando um benefício está aberto */
+.hero-b-photo::after {
+    content: "";
     position: absolute;
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
+    inset: 0;
+    z-index: 1;
+    background: rgba(18, 18, 18, .45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s var(--ease);
+}
+
+.hero-b-photo:has(.hero-b-benefits li:hover, .hero-b-benefits li:focus)::after {
+    opacity: 1;
+}
+
+.hero-b-benefits {
+    z-index: 2;
+    align-self: end;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+    margin: 16px;
 }
 
 .hero-b-benefits li {
@@ -786,14 +808,86 @@ ol {
     font-size: .9rem;
     font-weight: 600;
     line-height: 1.25;
+    cursor: help;
+    outline: none;
+    /* sem transform no chip: senão o detalhe passaria a se posicionar no chip, e não na foto */
+    transition: background-color .25s var(--ease);
 }
 
-.hero-b-benefits span {
+.hero-b-benefits li:hover,
+.hero-b-benefits li:focus {
+    background: var(--red);
+}
+
+.hero-b-benefits li:focus-visible {
+    box-shadow: 0 0 0 3px #fff;
+}
+
+.hb-num {
     flex: none;
     font-size: 1.15rem;
     font-weight: 600;
     letter-spacing: -0.03em;
     color: #ff5a5f;
+    transition: color .25s var(--ease);
+}
+
+.hero-b-benefits li:hover .hb-num,
+.hero-b-benefits li:focus .hb-num {
+    color: #fff;
+}
+
+/* cartão de detalhe: abre no centro da foto */
+.hb-detail {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: calc(50% - 34px);
+    width: min(440px, 82%);
+    padding: 24px 28px;
+    border-radius: var(--r-xl);
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .55);
+    font-weight: 400;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(.94);
+    transition: opacity .3s var(--ease), transform .4s var(--ease-out), visibility 0s .3s;
+}
+
+.hero-b-benefits li:hover .hb-detail,
+.hero-b-benefits li:focus .hb-detail {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity .3s var(--ease), transform .4s var(--ease-out), visibility 0s;
+}
+
+.hb-detail-num {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--red);
+}
+
+.hb-detail-title {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+}
+
+.hb-detail p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: .98rem;
+    line-height: 1.5;
 }
 
 /* ---------- Formulário ---------- */
@@ -2334,6 +2428,7 @@ a:focus-visible .tool::after {
     }
 
     .hero-b-photo {
+        display: block;
         overflow: visible;
         aspect-ratio: auto;
         background: none;
@@ -2344,11 +2439,47 @@ a:focus-visible .tool::after {
         aspect-ratio: 1600 / 978;
     }
 
-    /* no celular os benefícios saem de cima da foto e vêm logo abaixo dela */
+    .hero-b-photo::after {
+        display: none;
+    }
+
+    /* no celular os benefícios vêm abaixo da foto, com o subtexto sempre visível */
     .hero-b-benefits {
-        position: static;
         grid-template-columns: 1fr;
-        margin-top: 10px;
+        margin: 10px 0 0;
+    }
+
+    .hero-b-benefits li {
+        flex-wrap: wrap;
+        cursor: default;
+    }
+
+    .hero-b-benefits li:hover,
+    .hero-b-benefits li:focus {
+        background: rgba(18, 18, 18, .78);
+    }
+
+    .hb-detail {
+        position: static;
+        width: 100%;
+        padding: 0 0 0 30px;
+        background: none;
+        color: inherit;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .hb-detail-num,
+    .hb-detail-title {
+        display: none;
+    }
+
+    .hb-detail p {
+        margin-top: 2px;
+        color: rgba(255, 255, 255, .75);
+        font-size: .86rem;
     }
 
     /* Hero empilhado: a foto vira uma faixa inteira no topo e o texto começa logo abaixo */

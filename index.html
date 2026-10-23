@@ -34,7 +34,7 @@
     <link rel="preload" href="assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" as="image" href="assets/img/hero-fachada-hd-1024.webp" fetchpriority="high"
         imagesrcset="assets/img/hero-fachada-hd-640.webp 640w, assets/img/hero-fachada-hd-800.webp 800w, assets/img/hero-fachada-hd-1024.webp 1024w, assets/img/hero-fachada-hd-1600.webp 1600w" imagesizes="100vw">
-    <link rel="stylesheet" href="assets/css/style.css?v=2.8.0">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.9.1">
     <script>document.documentElement.classList.add('js');</script>
 
     <script type="application/ld+json">
@@ -275,10 +275,32 @@
                             srcset="assets/img/hero-fachada-hd-640.webp 640w, assets/img/hero-fachada-hd-800.webp 800w, assets/img/hero-fachada-hd-1024.webp 1024w, assets/img/hero-fachada-hd-1600.webp 1600w"
                             sizes="(min-width: 961px) 700px, 100vw" alt="Fachada da fábrica Shineray" width="1024"
                             height="626" loading="lazy" decoding="async">
+                        <!-- passe o mouse (ou foque com Tab) em um benefício: o detalhe abre no centro da foto -->
                         <ol class="hero-b-benefits">
-                            <li><span>01</span>Sem juros de financiamento</li>
-                            <li><span>02</span>Parcela que cabe no mês</li>
-                            <li><span>03</span>Lance para buscar antecipação</li>
+                            <li tabindex="0">
+                                <span class="hb-num">01</span><span class="hb-title">Sem juros de financiamento</span>
+                                <div class="hb-detail">
+                                    <span class="hb-detail-num" aria-hidden="true">01</span>
+                                    <strong class="hb-detail-title" aria-hidden="true">Sem juros de financiamento</strong>
+                                    <p>O custo do consórcio é a taxa de administração e demais encargos previstos em contrato — apresentados antes da adesão.</p>
+                                </div>
+                            </li>
+                            <li tabindex="0">
+                                <span class="hb-num">02</span><span class="hb-title">Parcela que cabe no mês</span>
+                                <div class="hb-detail">
+                                    <span class="hb-detail-num" aria-hidden="true">02</span>
+                                    <strong class="hb-detail-title" aria-hidden="true">Parcela que cabe no mês</strong>
+                                    <p>Você parte do valor mensal que é confortável para você, e não do preço da moto.</p>
+                                </div>
+                            </li>
+                            <li tabindex="0">
+                                <span class="hb-num">03</span><span class="hb-title">Lance para buscar antecipação</span>
+                                <div class="hb-detail">
+                                    <span class="hb-detail-num" aria-hidden="true">03</span>
+                                    <strong class="hb-detail-title" aria-hidden="true">Lance para buscar antecipação</strong>
+                                    <p>Além do sorteio, é possível ofertar lance nas assembleias, conforme as regras do grupo. Lance não garante contemplação.</p>
+                                </div>
+                            </li>
                         </ol>
                     </figure>
                 </div>
@@ -844,8 +866,8 @@
         <button type="button" class="btn btn-primary btn-sm" data-cookie="accept">Aceitar</button>
     </div>
 
-    <script src="assets/js/config.js?v=2.8.0" defer></script>
-    <script src="assets/js/main.js?v=2.8.0" defer></script>
+    <script src="assets/js/config.js?v=2.9.1" defer></script>
+    <script src="assets/js/main.js?v=2.9.1" defer></script>
 </body>
 
 </html>
