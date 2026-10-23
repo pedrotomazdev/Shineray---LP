@@ -724,6 +724,78 @@ ol {
     z-index: 1;
 }
 
+/* 2c. Hero — variante B: foto da loja inteira + texto + formulário (fundo claro) */
+.hero-b {
+    padding: var(--section) 0;
+    background: var(--tint);
+}
+
+.hero-b-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: clamp(32px, 4vw, 56px);
+    align-items: start;
+}
+
+.hero-b-copy .lead {
+    margin-top: 20px;
+}
+
+.hero-b .display-xl {
+    font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+}
+
+.hero-b-photo {
+    position: relative;
+    margin: 36px 0 0;
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    aspect-ratio: 1600 / 978;
+    background: #dfe7ee;
+}
+
+.hero-b-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-out);
+}
+
+.hero-b-photo:hover img {
+    transform: scale(1.03);
+}
+
+.hero-b-benefits {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.hero-b-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: var(--r-md);
+    background: rgba(18, 18, 18, .78);
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.hero-b-benefits span {
+    flex: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: #ff5a5f;
+}
+
 /* ---------- Formulário ---------- */
 
 .card-form {
@@ -2255,6 +2327,28 @@ a:focus-visible .tool::after {
 
     .why-copy {
         order: -1;
+    }
+
+    .hero-b-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-b-photo {
+        overflow: visible;
+        aspect-ratio: auto;
+        background: none;
+    }
+
+    .hero-b-photo img {
+        border-radius: var(--r-xl);
+        aspect-ratio: 1600 / 978;
+    }
+
+    /* no celular os benefícios saem de cima da foto e vêm logo abaixo dela */
+    .hero-b-benefits {
+        position: static;
+        grid-template-columns: 1fr;
+        margin-top: 10px;
     }
 
     /* Hero empilhado: a foto vira uma faixa inteira no topo e o texto começa logo abaixo */

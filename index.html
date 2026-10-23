@@ -34,7 +34,7 @@
     <link rel="preload" href="assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" as="image" href="assets/img/hero-fachada-hd-1024.webp" fetchpriority="high"
         imagesrcset="assets/img/hero-fachada-hd-640.webp 640w, assets/img/hero-fachada-hd-800.webp 800w, assets/img/hero-fachada-hd-1024.webp 1024w, assets/img/hero-fachada-hd-1600.webp 1600w" imagesizes="100vw">
-    <link rel="stylesheet" href="assets/css/style.css?v=2.7.6">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.8.0">
     <script>document.documentElement.classList.add('js');</script>
 
     <script type="application/ld+json">
@@ -252,6 +252,108 @@
                     <a class="link-inline link-light" href="#modelos">Ver modelos <svg class="ico"><use href="#i-arrow" /></svg></a>
                 </li>
             </ul>
+        </section>
+
+        <!-- 2c. HERO — VARIANTE B (proposta para comparação): foto da loja inteira, texto e formulário -->
+        <section class="hero-b" aria-labelledby="hero-b-title">
+            <div class="container hero-b-grid">
+                <div class="hero-b-main">
+                    <div class="hero-b-copy">
+                        <p class="eyebrow reveal">Consórcio de motos Shineray</p>
+                        <h2 id="hero-b-title" class="display-xl reveal">
+                            Sua próxima Shineray começa com <em>um plano</em>.
+                        </h2>
+                        <p class="lead reveal">
+                            No consórcio, você escolhe a parcela que cabe no seu mês, participa de um grupo e usa o
+                            crédito para conquistar sua moto quando for contemplado. Sem juros de financiamento — com
+                            todos os custos apresentados antes de você contratar.
+                        </p>
+                    </div>
+
+                    <figure class="hero-b-photo reveal">
+                        <img src="assets/img/hero-fachada-hd-1024.webp"
+                            srcset="assets/img/hero-fachada-hd-640.webp 640w, assets/img/hero-fachada-hd-800.webp 800w, assets/img/hero-fachada-hd-1024.webp 1024w, assets/img/hero-fachada-hd-1600.webp 1600w"
+                            sizes="(min-width: 961px) 700px, 100vw" alt="Fachada da fábrica Shineray" width="1024"
+                            height="626" loading="lazy" decoding="async">
+                        <ol class="hero-b-benefits">
+                            <li><span>01</span>Sem juros de financiamento</li>
+                            <li><span>02</span>Parcela que cabe no mês</li>
+                            <li><span>03</span>Lance para buscar antecipação</li>
+                        </ol>
+                    </figure>
+                </div>
+
+                <aside class="hero-b-form" aria-labelledby="form-title-b">
+                        <form class="lead-form card-form" novalidate data-form-origin="hero-b">
+                            <div class="form-head">
+                                <p class="eyebrow eyebrow-muted">Simulação sem compromisso</p>
+                                <h2 id="form-title-b" class="h3">Quanto cabe no seu mês?</h2>
+                                <p class="form-sub">Um especialista apresenta os planos compatíveis com a parcela que você
+                                    escolher.</p>
+                            </div>
+
+                            <div class="field">
+                                <label for="herob-nome">Seu nome</label>
+                                <input id="herob-nome" name="nome" type="text" autocomplete="name"
+                                    placeholder="Como podemos te chamar?" required minlength="2">
+                                <p class="field-error" aria-live="polite"></p>
+                            </div>
+
+                            <div class="field">
+                                <label for="herob-contato">WhatsApp</label>
+                                <input id="herob-contato" name="contato" type="tel" inputmode="tel" autocomplete="tel"
+                                    placeholder="(34) 99999-9999" required data-mask="phone">
+                                <p class="field-error" aria-live="polite"></p>
+                            </div>
+
+                            <div class="field">
+                                <label for="herob-modelo">Modelo de interesse</label>
+                                <div class="select-wrap">
+                                    <select id="herob-modelo" name="modelo" required data-model-select>
+                                        <option value="">Selecione um modelo</option>
+                                        <option>JET 125</option>
+                                        <option>JEF 170</option>
+                                        <option>NEW SHI 175</option>
+                                        <option>STORM</option>
+                                        <option>SHI 175 EFI</option>
+                                        <option>SHI 250</option>
+                                        <option>URBAN</option>
+                                        <option>FLASH</option>
+                                        <option>IRON</option>
+                                        <option>TITANIUM</option>
+                                        <option>DENVER</option>
+                                        <option>SBM 250S</option>
+                                        <option value="Ainda não sei">Ainda não sei — quero ajuda</option>
+                                    </select>
+                                    <svg class="ico"><use href="#i-down" /></svg>
+                                </div>
+                                <p class="field-error" aria-live="polite"></p>
+                            </div>
+
+                            <div class="field field-range">
+                                <div class="range-head">
+                                    <label for="herob-parcela">Parcela desejada</label>
+                                    <output for="herob-parcela" class="range-output" data-range-output>R$ —</output>
+                                </div>
+                                <input id="herob-parcela" name="parcela" type="range" data-parcela-range
+                                    aria-describedby="herob-parcela-hint">
+                                <div class="range-scale" aria-hidden="true"><span data-range-min></span><span
+                                        data-range-max></span></div>
+                                <p id="herob-parcela-hint" class="hint">
+                                    Valor de referência para a conversa; o plano final depende das condições do grupo.
+                                </p>
+                            </div>
+
+                            <button class="btn btn-primary btn-block" type="submit">
+                                Quero minha simulação <svg class="ico"><use href="#i-arrow" /></svg>
+                            </button>
+                            <p class="form-legal">Ao enviar, o atendimento continua no WhatsApp. Seus dados são usados
+                                apenas para o atendimento sobre o consórcio,
+                                conforme a <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
+                            <div class="form-status" role="status" aria-live="polite" hidden></div>
+                        </form>
+                </aside>
+            </div>
         </section>
 
         <!-- 3. POR QUE CONSÓRCIO (reforço + moto em destaque) -->
@@ -742,8 +844,8 @@
         <button type="button" class="btn btn-primary btn-sm" data-cookie="accept">Aceitar</button>
     </div>
 
-    <script src="assets/js/config.js?v=2.7.6" defer></script>
-    <script src="assets/js/main.js?v=2.7.6" defer></script>
+    <script src="assets/js/config.js?v=2.8.0" defer></script>
+    <script src="assets/js/main.js?v=2.8.0" defer></script>
 </body>
 
 </html>
