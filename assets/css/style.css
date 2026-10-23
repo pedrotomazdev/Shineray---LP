@@ -416,6 +416,8 @@ ol {
 .hero-dark {
     position: relative;
     overflow: hidden;
+    /* clip corta a foto sem transformar o hero em área de rolagem */
+    overflow: clip;
     background: var(--dark);
     color: #fff;
     padding: clamp(48px, 7vw, 96px) 0 clamp(40px, 5vw, 64px);
@@ -449,10 +451,13 @@ ol {
     z-index: 1;
 }
 
-/* Desktop: título começa abaixo do letreiro da fachada */
+/* Desktop: texto alinhado ao topo do formulário */
 @media (min-width: 961px) {
-    .hero-dark .convert-copy {
-        padding-top: clamp(220px, 23vw, 360px);
+    /* escurecimento suave atrás da coluna de texto; a fachada segue visível */
+    .hero-dark::before {
+        background:
+            linear-gradient(90deg, rgba(18, 18, 18, .62) 0%, rgba(18, 18, 18, .42) 38%, rgba(18, 18, 18, 0) 58%),
+            linear-gradient(180deg, rgba(18, 18, 18, .2) 0, rgba(18, 18, 18, .05) 22vw, rgba(18, 18, 18, .5) 36vw, rgba(18, 18, 18, .82) 48vw, var(--dark) 60vw);
     }
 
     /* desloca a foto para o letreiro inteiro ficar livre do formulário */
@@ -613,11 +618,6 @@ ol {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
     gap: clamp(40px, 6vw, 96px);
     align-items: start;
-}
-
-.convert-form {
-    position: sticky;
-    top: 96px;
 }
 
 .convert .benefit-stack {
@@ -2239,10 +2239,6 @@ a:focus-visible .tool::after {
     .section-head-split,
     .plan-grid {
         grid-template-columns: 1fr;
-    }
-
-    .convert-form {
-        position: static;
     }
 
     .faq-grid {
