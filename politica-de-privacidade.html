@@ -4,1256 +4,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="description"
-        content="Planeje sua próxima moto Shineray com um consórcio feito para o seu momento. Simule sua parcela sem compromisso.">
+    <meta name="theme-color" content="#121212">
     <title>Política de Privacidade | Consórcio Shineray</title>
-    <meta name="description" content="Saiba como a Shineray Teq Motors coleta, utiliza e protege seus dados pessoais na página de consórcio de motos.">
+    <meta name="description"
+        content="Saiba como a Shineray Teq Motors coleta, utiliza e protege seus dados pessoais na página de consórcio de motos.">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://landingpage-shinray.vercel.app/politica-de-privacidade.html">
+
     <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./landingpage.css">
-    <link rel="stylesheet" id="teqmotors-main-style-css"
-        href="https://shinerayuberlandiamg.com.br/wp-content/themes/teqmotors/assets/css/main.css?ver=1784284361"
-        media="all">
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-
-        }
-
-        /* Avoid CLS (Cumulative Layout Shift) for images */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        header {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.8) 100%);
-
-        }
-
-        /* Container Geral do Header */
-        .header-container.container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            /* Espalha os 3 blocos principais */
-            padding: 20px 0;
-            width: 95%;
-            max-width: 1300px;
-            /* Alinhe com o tamanho máximo do seu site */
-            margin: 0 auto;
-            box-sizing: border-box;
-        }
-
-        /* 1. Bloco do Logo (Esquerda) */
-        .site-branding {
-            flex-shrink: 0;
-        }
-
-        /* 2. Bloco de Navegação (Centro / Direita) */
-        .main-navigation {
-            display: flex;
-            align-items: center;
-
-        }
-
-        /* Lista de links do WordPress (ul) */
-        .main-navigation ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 30px;
-
-        }
-
-        .main-navigation ul li a {
-            text-decoration: none;
-            font-family: Inter;
-            font-weight: 300;
-            font-size: 13px;
-            line-height: 24px;
-            letter-spacing: 0.35px;
-            text-align: center;
-            color: #18181b;
-            transition: color 0.3s ease;
-        }
-
-        /* Esconde o botão do menu mobile por padrão no desktop */
-        .menu-toggle {
-            display: none;
-        }
-
-        .menu-item-cta-mobile {
-            display: none;
-        }
-
-        /* 3. Bloco de Ações (Direita) */
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            /* Espaço entre o botão de tema e o botão de Contato */
-            flex-shrink: 0;
-        }
-
-        /* Estilo básico do botão parecido com a imagem (opcional) */
-        .btn-cta.btn-header {
-            display: flex;
-            gap: 7px;
-            align-items: center;
-            padding: 7px 16px;
-            border-radius: 50px;
-            /* Bordas bem arredondadas como na imagem */
-            text-decoration: none;
-            font-family: 'Inter';
-            font-weight: 300;
-            font-size: 12px;
-            line-height: 20px;
-            letter-spacing: 0.35px;
-            text-align: center;
-            color: #FFFFFF;
-            background: linear-gradient(90deg, #E7000B 0%, #9F0712 100%);
-
-        }
-
-
-        /* ==========================================
-				RESPONSIVIDADE (MOBILE)
-				========================================== */
-        @media (max-width: 768px) {
-            .site-logo img {
-                width: 160px !important;
-                height: 27px !important;
-            }
-
-            /* Mostra o botão hambúrguer */
-            .menu-toggle {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-                background: none;
-                border: none;
-                cursor: pointer;
-            }
-
-            .menu-toggle .bar {
-                width: 25px;
-                height: 3px;
-                background-color: currentColor;
-                /* Pega a cor do texto atual */
-                transition: 0.3s;
-            }
-
-            /* Transforma o menu em uma lista vertical oculta */
-            .nav-menu-wrapper {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                flex-direction: column;
-                padding: 30px 20px;
-                box-sizing: border-box;
-                background: rgba(10, 10, 12, 0.98);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-                z-index: 999;
-            }
-
-            .nav-menu-wrapper.active {
-                display: flex;
-            }
-
-            .main-navigation ul {
-                flex-direction: column;
-                gap: 20px;
-                width: 100%;
-            }
-
-            /* Esconde o botão de ações do header no mobile */
-            .header-actions {
-                display: none;
-            }
-
-            /* Mostra o botão dentro do menu hambúrguer */
-            .menu-item-cta-mobile {
-                display: block;
-                width: 100%;
-                margin-top: 10px;
-            }
-
-            .btn-mobile-nav {
-                width: 100%;
-                justify-content: center;
-                box-sizing: border-box;
-            }
-        }
-
-
-        /*hero section*/
-        /* --- Ajuste no Header para sobrepor o Hero (Fixed) --- */
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: background 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Styling when scrolled */
-        .site-header.scrolled {
-            background: rgba(7, 7, 9, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Smooth padding change on scroll */
-        .site-header .header-container.container {
-            transition: padding 0.3s ease;
-        }
-
-        .site-header.scrolled .header-container.container {
-            padding: 10px 20px;
-        }
-
-        /* --- Hero Section Base --- */
-        .hero-section {
-            position: relative;
-            height: 800px;
-            display: flex;
-            align-items: flex-start;
-            padding-top: 104px;
-            /* Evita que o conteúdo do Hero fique escondido sob o Header */
-            padding-bottom: 60px;
-            color: #ffffff;
-            background-color: #070709;
-            overflow: hidden;
-        }
-
-        .hero-bg-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center right;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Camada escura para garantir leitura do texto */
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #070709 0%, rgba(7, 7, 9, 0.9) 50%, rgba(0, 0, 0, 0) 100%);
-            z-index: 1;
-        }
-
-        .hero-container {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 1400px !important;
-            margin: 0 auto;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-
-
-
-        /* --- Elementos do Conteúdo --- */
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            background: #FFFFFF0D;
-            border: 1px solid #FFFFFF1A;
-            padding: 6px 13px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-
-            font-family: 'Inter';
-            font-weight: 400;
-            font-size: 11px;
-            line-height: 22.75px;
-            letter-spacing: 0.35px;
-
-            color: #FFFFFF;
-        }
-
-        .badge-dot {
-            width: 6px;
-            height: 6px;
-            background-color: #FB2C36;
-            /* Vermelho Shineray */
-            border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0px 0px 8px 0px #EF4444CC;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 96px);
-            font-family: 'Inter';
-            font-weight: 700;
-            line-height: 90%;
-            letter-spacing: -4.8px;
-
-            margin: 0 0 30px 0;
-        }
-
-        .text-accent {
-            background: linear-gradient(90deg, #FB2C36 0%, #C10007 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            padding-right: 0.1em;
-            margin-right: -0.1em;
-        }
-
-        .hero-description {
-            font-family: 'Inter';
-            font-weight: 300;
-            font-style: Light;
-            font-size: 23px;
-            color: #9F9FA9;
-            line-height: 100%;
-            letter-spacing: 0px;
-            max-width: 621px;
-            margin-bottom: 84px;
-
-        }
-
-        .hero-description strong {
-            color: #ffffff;
-
-        }
-
-        /* --- Botões (CTAs) --- */
-        .hero-actions-btns {
-            display: flex;
-            gap: 16px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary,
-        .btn-secondary {
-            padding: 17px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-
-            transition: transform 0.2s, background-color 0.2s;
-            font-family: 'Inter';
-            font-weight: 400;
-            font-size: 14px;
-            color: white;
-            line-height: 100%;
-            letter-spacing: 0.4px;
-            text-transform: uppercase;
-
-        }
-
-        .btn-primary {
-            background: linear-gradient(89.15deg, #E3010C 34.79%, #A10711 99.27%);
-            color: #ffffff;
-            transition: 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(90deg, #9F0712 0%, #3C0004 100%);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #D4D4D8;
-            border: 1px solid #FFFFFF33;
-            font-weight: 500;
-        }
-
-        .btn-secondary:hover {
-            background: #FFFFFF0F;
-            border-color: #FFFFFF33;
-            box-shadow: 0px 4px 4px 0px #00000040;
-
-
-        }
-
-        /* --- Selos / Diferenciais Inferiores --- */
-        .hero-features {
-            display: flex;
-            gap: 23px;
-            flex-wrap: wrap;
-        }
-
-        .feature-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(90deg, rgba(34, 34, 34, 0.4) 40.83%, rgba(0, 0, 0, 0.7) 100%);
-            padding: 4px 16px;
-            border-radius: 9px;
-
-            font-family: 'Inter';
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 20px;
-            letter-spacing: 0px;
-            color: #71717B;
-        }
-
-        .feature-highlight {
-            background: linear-gradient(90deg, #E4010C 40.83%, #810006 76.61%);
-            color: #ffffff;
-
-        }
-
-        .feature-item .icon {
-            width: 16px;
-            height: 16px;
-        }
-
-        .icon-sparkle {
-            color: #e50914;
-        }
-
-        .site-logo img {
-            max-width: 270px;
-        }
-
-        @media(max-width:992px) {
-            .hero-section {
-                min-height: 53vh;
-            }
-        }
-
-        /* --- Responsividade Mobile --- */
-        @media (max-width: 768px) {
-            .hero-section {
-                background-position: 75% center;
-                /* Move a moto ligeiramente para aparecer melhor atrás do texto */
-                padding-top: 112px;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                text-align: left;
-            }
-
-            .hero-actions-btns {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .btn-primary,
-            .btn-secondary {
-                text-align: center;
-                width: 100%;
-                box-sizing: border-box;
-            }
-        }
-
-        .testimonial-left-overlay {
-            background: linear-gradient(176deg, rgba(241, 241, 241, 0) 20%, rgba(241, 241, 241, 0.9) 90%, #f1f1f1 100%), linear-gradient(0deg, rgba(241, 241, 241, 0.7) 0%, rgba(241, 241, 241, 0) 50%) !important;
-        }
-
-        .testimonial-card-wrapper {
-            background: #f1f1f1 !important;
-        }
-    </style>
+    <link rel="icon" href="favicon.png" sizes="48x48" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="preload" href="assets/fonts/inter-tight-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css?v=3.1.2">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
-<body class="landing-page antialiased">
-    <header id="masthead" class="site-header">
-        <div class="header-container container">
-            <div class="site-branding">
-                <a href="https://shinerayuberlandiamg.com.br/" class="site-logo" rel="home">
-                    <img src="./logo-dark.png" alt="Teq Motors" width="334" height="56" fetchpriority="high"
-                        decoding="async">
-                </a>
-            </div>
+<body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.4-3 8.1-7 9.5-4-1.4-7-5.1-7-9.5V6l7-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </svg>
 
-            <nav id="site-navigation" class="main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                    <span class="bar bar-1"></span>
-                    <span class="bar bar-2"></span>
-                    <span class="bar bar-3"></span>
-                </button>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-                <div class="nav-menu-wrapper">
-                    <ul id="primary-menu" class="menu">
-                        <li id="menu-item-12"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-12">
-                            <a href="/#a-marca" aria-current="page">A Marca</a>
-                        </li>
-                        <li id="menu-item-14"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-14">
-                            <a href="/#modelos" aria-current="page">Modelos</a>
-                        </li>
-                        <li id="menu-item-15"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-15">
-                            <a href="/#lojas" aria-current="page">Lojas</a>
-                        </li>
-                        <li class="menu-item-cta-mobile"><a href="#contact"
-                                class="btn-cta btn-header btn-mobile-nav"><svg width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M14.6667 11.28V13.28C14.6675 13.4657 14.6294 13.6494 14.555 13.8196C14.4807 13.9897 14.3716 14.1424 14.2348 14.2679C14.0979 14.3934 13.9364 14.489 13.7605 14.5485C13.5847 14.608 13.3983 14.63 13.2134 14.6133C11.1619 14.3904 9.19137 13.6894 7.46004 12.5667C5.84926 11.5431 4.48359 10.1774 3.46004 8.56667C2.33336 6.82747 1.6322 4.84733 1.41337 2.78667C1.39671 2.60231 1.41862 2.41651 1.4777 2.24108C1.53679 2.06566 1.63175 1.90446 1.75655 1.76775C1.88134 1.63103 2.03324 1.5218 2.20256 1.44701C2.37189 1.37222 2.55493 1.33351 2.74004 1.33333H4.74004C5.06357 1.33015 5.37723 1.44472 5.62254 1.65569C5.86786 1.86666 6.02809 2.15963 6.07337 2.48C6.15779 3.12004 6.31434 3.74848 6.54004 4.35333C6.62973 4.59195 6.64915 4.85127 6.59597 5.10059C6.5428 5.3499 6.41928 5.57874 6.24004 5.76L5.39337 6.60667C6.34241 8.2757 7.72434 9.65763 9.39337 10.6067L10.24 9.76C10.4213 9.58076 10.6501 9.45723 10.8994 9.40406C11.1488 9.35089 11.4081 9.3703 11.6467 9.46C12.2516 9.6857 12.88 9.84225 13.52 9.92667C13.8439 9.97235 14.1396 10.1355 14.3511 10.385C14.5625 10.6345 14.6748 10.953 14.6667 11.28Z"
-                                        stroke="white" stroke-width="1.33333" stroke-linecap="round"
-                                        stroke-linejoin="round"></path>
-                                </svg>Contato</a></li>
-                    </ul>
-                </div>
+    <!-- Header (mesmo da home; links apontam para as seções da home) -->
+    <header class="site-header" id="topo">
+        <div class="container header-inner">
+            <a href="index.html" class="brand" aria-label="Shineray Teq Motors — página inicial">
+                <img src="assets/img/logo-dark.webp" alt="Shineray Teq Motors" width="400" height="48">
+            </a>
+            <nav class="main-nav" aria-label="Principal">
+                <a href="index.html#como-funciona">Como funciona</a>
+                <a href="index.html#planejamento">Planejamento</a>
+                <a href="index.html#modelos">Modelos</a>
+                <a href="index.html#duvidas">Dúvidas</a>
             </nav>
-
             <div class="header-actions">
-
-                <a href="https://wa.me/5534984424404?text=Ol%C3%A1%2C%20estou%20interessado%28a%29%20em%20saber%20mais%20sobre%20as%20motos%20que%20voc%C3%AAs%20t%C3%AAm%20dispon%C3%ADveis."
-                    target="_blank" class="btn-cta btn-header" onclick="dataLayer.push({'event': 'clique_whatsapp'});">
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="13" height="13" x="0" y="0" viewBox="0 0 682 682.667"
-                        style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
-                        <g>
-                            <path fill-rule="evenodd"
-                                d="M544.387 93.008C484.512 33.063 404.883.035 320.05 0 145.246 0 2.98 142.262 2.91 317.113c-.024 55.895 14.577 110.457 42.331 158.551L.25 640l168.121-44.102c46.324 25.27 98.477 38.586 151.55 38.602h.134c174.785 0 317.066-142.273 317.132-317.133.036-84.742-32.921-164.418-92.8-224.36zM320.05 580.94h-.11c-47.296-.02-93.683-12.73-134.16-36.742l-9.62-5.715-99.766 26.172 26.628-97.27-6.27-9.972c-26.386-41.969-40.32-90.476-40.296-140.281.055-145.332 118.305-263.57 263.7-263.57 70.406.023 136.59 27.476 186.355 77.3s77.156 116.051 77.133 186.485C583.582 462.69 465.34 580.94 320.05 580.94zm144.586-197.418c-7.922-3.968-46.883-23.132-54.149-25.78-7.258-2.645-12.547-3.962-17.824 3.968-5.285 7.93-20.469 25.781-25.094 31.066-4.625 5.29-9.242 5.953-17.168 1.985-7.925-3.965-33.457-12.336-63.726-39.332-23.555-21.012-39.457-46.961-44.082-54.89-4.617-7.938-.04-11.813 3.476-16.173 8.578-10.652 17.168-21.82 19.809-27.105 2.644-5.29 1.32-9.918-.664-13.883-1.977-3.965-17.824-42.969-24.426-58.84-6.437-15.445-12.965-13.36-17.832-13.601-4.617-.231-9.902-.278-15.187-.278-5.282 0-13.868 1.98-21.133 9.918-7.262 7.934-27.73 27.102-27.73 66.106s28.394 76.683 32.355 81.972c3.96 5.29 55.879 85.328 135.367 119.649 18.906 8.172 33.664 13.043 45.176 16.695 18.984 6.031 36.254 5.18 49.91 3.14 15.226-2.277 46.879-19.171 53.488-37.68 6.602-18.51 6.602-34.374 4.617-37.683-1.976-3.304-7.261-5.285-15.183-9.254zm0 0"
-                                fill="currentColor" opacity="1" data-original="#000000" class=""></path>
-                        </g>
-                    </svg>
-
-                    Contato</a>
+                <a class="btn btn-primary btn-sm" href="index.html#simular">Simular parcela</a>
             </div>
         </div>
     </header>
 
-    <main class="bg-white text-[#18181b]">
+    <main id="conteudo">
         <!-- Introdução -->
-        <section class="border-b border-zinc-200">
-            <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-10">
-                <div class="max-w-3xl">
-                    <span
-                        class="inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#E7000B]">
-                        <span class="h-1.5 w-1.5 rounded-full bg-[#E7000B]"></span>
-                        Privacidade e transparência
-                    </span>
-
-                    <h1 class="mt-6 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-                        Política de Privacidade
-                    </h1>
-
-                    <p class="mt-5 max-w-2xl text-base leading-8 text-[#71717B] sm:text-lg">
-                        A sua privacidade é importante para nós. Nesta página,
-                        explicamos quais dados pessoais podem ser coletados,
-                        como são utilizados e quais são os seus direitos.
-                    </p>
-
-                    <p class="mt-6 text-sm text-[#71717B]">
-                        Última atualização: [dia/mês/ano]
-                    </p>
-                </div>
+        <section class="legal-hero" aria-labelledby="legal-title">
+            <div class="container">
+                <p class="eyebrow">Privacidade e transparência</p>
+                <h1 id="legal-title" class="display-lg">Política de Privacidade</h1>
+                <p class="lead">A sua privacidade é importante para nós. Nesta página, explicamos quais dados pessoais
+                    podem ser coletados, como são utilizados e quais são os seus direitos.</p>
+                <p class="legal-updated">Última atualização: 23 de outubro de 2026</p>
             </div>
         </section>
 
-        <!-- Conteúdo -->
-        <section
-            class="mx-auto grid max-w-7xl gap-12 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-20 lg:px-10">
-
-            <!-- Navegação lateral -->
-            <aside class="h-fit lg:sticky lg:top-8">
-                <p class="mb-4 text-xs font-bold uppercase tracking-widest text-[#71717B]">
-                    Nesta página
-                </p>
-
-                <nav class="flex flex-col gap-1 text-sm">
-                    <a href="#responsavel"
-                        class="rounded-lg border-l-2 border-[#E7000B] bg-red-50 px-4 py-2.5 font-semibold text-[#18181b]">
-                        01. Quem somos
-                    </a>
-                    <a href="#dados"
-                        class="rounded-lg border-l-2 border-transparent px-4 py-2.5 text-[#71717B] transition hover:border-zinc-300 hover:bg-zinc-50 hover:text-[#18181b]">
-                        02. Dados coletados
-                    </a>
-                    <a href="#finalidades"
-                        class="rounded-lg border-l-2 border-transparent px-4 py-2.5 text-[#71717B] transition hover:border-zinc-300 hover:bg-zinc-50 hover:text-[#18181b]">
-                        03. Como usamos os dados
-                    </a>
-                    <a href="#cookies"
-                        class="rounded-lg border-l-2 border-transparent px-4 py-2.5 text-[#71717B] transition hover:border-zinc-300 hover:bg-zinc-50 hover:text-[#18181b]">
-                        04. Cookies
-                    </a>
-                    <a href="#compartilhamento"
-                        class="rounded-lg border-l-2 border-transparent px-4 py-2.5 text-[#71717B] transition hover:border-zinc-300 hover:bg-zinc-50 hover:text-[#18181b]">
-                        05. Compartilhamento
-                    </a>
-                    <a href="#seguranca"
-                        class="rounded-lg border-l-2 border-transparent px-4 py-2.5 text-[#71717B] transition hover:border-zinc-300 hover:bg-zinc-50 hover:text-[#18181b]">
-                        06. Segurança e retenção
-                    </a>
-                    <a href="#direitos"
-                        class="rounded-lg border-l-2 border-transparent px-4 py-2.5 text-[#71717B] transition hover:border-zinc-300 hover:bg-zinc-50 hover:text-[#18181b]">
-                        07. Seus direitos
-                    </a>
-                    <a href="#contato"
-                        class="rounded-lg border-l-2 border-transparent px-4 py-2.5 text-[#71717B] transition hover:border-zinc-300 hover:bg-zinc-50 hover:text-[#18181b]">
-                        08. Fale conosco
-                    </a>
+        <div class="container legal-layout">
+            <!-- Navegação -->
+            <aside class="legal-aside">
+                <nav class="legal-nav" aria-label="Seções desta política">
+                    <p class="legal-nav-title">Nesta página</p>
+                    <a href="#responsavel"><span>01</span> Quem somos</a>
+                    <a href="#dados"><span>02</span> Dados coletados</a>
+                    <a href="#finalidades"><span>03</span> Como usamos os dados</a>
+                    <a href="#cookies"><span>04</span> Cookies</a>
+                    <a href="#compartilhamento"><span>05</span> Compartilhamento</a>
+                    <a href="#seguranca"><span>06</span> Segurança e retenção</a>
+                    <a href="#direitos"><span>07</span> Seus direitos</a>
+                    <a href="#contato"><span>08</span> Fale conosco</a>
                 </nav>
-
-                <div class="mt-8 rounded-xl border border-zinc-200 bg-zinc-50 p-5">
-                    <div
-                        class="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-white text-[#E7000B] shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z" />
-                            <path d="m9 12 2 2 4-4" />
-                        </svg>
-                    </div>
-                    <h2 class="text-sm font-bold">Seus dados, seus direitos</h2>
-                    <p class="mt-2 text-sm leading-6 text-[#71717B]">
-                        Você pode solicitar informações sobre o tratamento
-                        dos seus dados pessoais pelos canais indicados nesta política.
-                    </p>
+                <div class="legal-aside-card">
+                    <svg class="ico"><use href="#i-shield" /></svg>
+                    <p class="legal-aside-title">Seus dados, seus direitos</p>
+                    <p>Você pode solicitar informações sobre o tratamento dos seus dados pessoais pelos canais indicados
+                        nesta política.</p>
                 </div>
             </aside>
 
             <!-- Texto jurídico -->
-            <article class="min-w-0 max-w-3xl">
-
-                <section id="responsavel" class="scroll-mt-8 pb-10">
-                    <span class="text-xs font-bold tracking-widest text-[#E7000B]">01 / INTRODUÇÃO</span>
-                    <h2 class="mt-2 text-2xl font-bold tracking-tight">Quem somos</h2>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Esta Política de Privacidade explica como a
-                        <strong class="font-semibold text-[#18181b]">[nome da empresa]</strong>,
-                        inscrita no CNPJ sob o nº [CNPJ], com sede em
-                        [endereço ou cidade/UF], trata os dados pessoais de
-                        visitantes e usuários deste site.
-                    </p>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        O tratamento de dados pessoais é realizado em conformidade
-                        com a legislação aplicável, especialmente a Lei nº
-                        13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).
-                    </p>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Ao utilizar este site, recomendamos que você leia esta
-                        política para compreender nossas práticas de privacidade.
-                        Quando o consentimento for a base legal aplicável, ele será
-                        solicitado de forma específica e adequada.
-                    </p>
+            <article class="legal-article">
+                <section id="responsavel" class="legal-section">
+                    <p class="legal-kicker">01 / Introdução</p>
+                    <h2>Quem somos</h2>
+                    <p>Esta Política de Privacidade explica como a <strong>Shineray Teq Motors</strong>, concessionária
+                        oficial Shineray, inscrita no CNPJ sob o nº 59.083.795/0001-91, com sede em Uberlândia/MG, trata
+                        os dados pessoais de visitantes e usuários deste site.</p>
+                    <p>O tratamento de dados pessoais é realizado em conformidade com a legislação aplicável,
+                        especialmente a Lei nº 13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).</p>
+                    <p>Ao utilizar este site, recomendamos que você leia esta política para compreender nossas práticas
+                        de privacidade. Quando o consentimento for a base legal aplicável, ele será solicitado de forma
+                        específica e adequada.</p>
                 </section>
 
-                <div class="border-t border-zinc-200"></div>
-
-                <section id="dados" class="scroll-mt-8 py-10">
-                    <span class="text-xs font-bold tracking-widest text-[#E7000B]">02 / COLETA</span>
-                    <h2 class="mt-2 text-2xl font-bold tracking-tight">Quais dados podemos coletar</h2>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Os dados tratados dependem da forma como você interage
-                        com o site. Podemos coletar as seguintes categorias,
-                        quando efetivamente aplicáveis:
-                    </p>
-
-                    <div class="mt-6 space-y-4">
-                        <div class="rounded-xl border border-zinc-200 p-5">
-                            <h3 class="font-bold">Dados fornecidos por você</h3>
-                            <p class="mt-2 text-sm leading-7 text-[#71717B]">
-                                Nome, telefone, endereço de e-mail e outras
-                                informações que você informar voluntariamente
-                                em formulários de contato, solicitações de orçamento
-                                ou canais de atendimento.
-                            </p>
+                <section id="dados" class="legal-section">
+                    <p class="legal-kicker">02 / Coleta</p>
+                    <h2>Quais dados podemos coletar</h2>
+                    <p>Os dados tratados dependem da forma como você interage com o site. Podemos coletar as seguintes
+                        categorias, quando efetivamente aplicáveis:</p>
+                    <div class="legal-cards">
+                        <div class="legal-card">
+                            <h3>Dados fornecidos por você</h3>
+                            <p>Nome, telefone (WhatsApp), modelo de interesse e valor de parcela desejado, informados no
+                                formulário de simulação, além das informações que você enviar pelos canais de
+                                atendimento.</p>
                         </div>
-
-                        <div class="rounded-xl border border-zinc-200 p-5">
-                            <h3 class="font-bold">Dados de navegação</h3>
-                            <p class="mt-2 text-sm leading-7 text-[#71717B]">
-                                Informações técnicas, como endereço IP, tipo de
-                                navegador, dispositivo, páginas acessadas, data,
-                                horário e registros de interação, conforme os
-                                recursos utilizados no site.
-                            </p>
+                        <div class="legal-card">
+                            <h3>Dados de navegação</h3>
+                            <p>Informações técnicas, como endereço IP, tipo de navegador, dispositivo, páginas acessadas,
+                                data, horário e registros de interação, conforme os recursos utilizados no site.</p>
                         </div>
-
-                        <div class="rounded-xl border border-zinc-200 p-5">
-                            <h3 class="font-bold">Dados coletados por terceiros</h3>
-                            <p class="mt-2 text-sm leading-7 text-[#71717B]">
-                                Caso existam ferramentas externas integradas ao site,
-                                elas poderão tratar informações conforme suas
-                                funcionalidades, configurações e políticas próprias.
-                            </p>
+                        <div class="legal-card">
+                            <h3>Dados coletados por terceiros</h3>
+                            <p>Caso existam ferramentas externas integradas ao site, elas poderão tratar informações
+                                conforme suas funcionalidades, configurações e políticas próprias.</p>
                         </div>
                     </div>
-
-                    <p class="mt-5 text-sm leading-7 text-[#71717B]">
-                        Não solicitamos dados pessoais além daqueles necessários
-                        para as finalidades informadas, observadas as hipóteses
-                        legais aplicáveis.
-                    </p>
+                    <p>Não solicitamos dados pessoais além daqueles necessários para as finalidades informadas,
+                        observadas as hipóteses legais aplicáveis.</p>
                 </section>
 
-                <div class="border-t border-zinc-200"></div>
-
-                <section id="finalidades" class="scroll-mt-8 py-10">
-                    <span class="text-xs font-bold tracking-widest text-[#E7000B]">03 / UTILIZAÇÃO</span>
-                    <h2 class="mt-2 text-2xl font-bold tracking-tight">Como utilizamos seus dados</h2>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Os dados pessoais podem ser utilizados para as seguintes
-                        finalidades, conforme os serviços disponíveis:
-                    </p>
-
-                    <ul class="mt-5 space-y-3 text-[#71717B]">
-                        <li class="flex gap-3 leading-7">
-                            <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#E7000B]"></span>
-                            Responder dúvidas, solicitações de contato e pedidos de orçamento.
-                        </li>
-                        <li class="flex gap-3 leading-7">
-                            <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#E7000B]"></span>
-                            Prestar os serviços solicitados e cumprir obrigações contratuais.
-                        </li>
-                        <li class="flex gap-3 leading-7">
-                            <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#E7000B]"></span>
-                            Garantir o funcionamento, a manutenção e a segurança do site.
-                        </li>
-                        <li class="flex gap-3 leading-7">
-                            <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#E7000B]"></span>
-                            Compreender a utilização do site e melhorar seus recursos, quando houver ferramentas
-                            analíticas autorizadas.
-                        </li>
-                        <li class="flex gap-3 leading-7">
-                            <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#E7000B]"></span>
-                            Enviar comunicações de marketing quando houver base legal adequada e, quando necessário,
-                            consentimento.
-                        </li>
-                        <li class="flex gap-3 leading-7">
-                            <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#E7000B]"></span>
-                            Cumprir obrigações legais e regulatórias e exercer direitos em processos administrativos ou
-                            judiciais.
-                        </li>
+                <section id="finalidades" class="legal-section">
+                    <p class="legal-kicker">03 / Utilização</p>
+                    <h2>Como utilizamos seus dados</h2>
+                    <p>Os dados pessoais podem ser utilizados para as seguintes finalidades, conforme os serviços
+                        disponíveis:</p>
+                    <ul class="legal-list">
+                        <li>Responder dúvidas, solicitações de contato e pedidos de simulação.</li>
+                        <li>Prestar os serviços solicitados e cumprir obrigações contratuais.</li>
+                        <li>Garantir o funcionamento, a manutenção e a segurança do site.</li>
+                        <li>Compreender a utilização do site e melhorar seus recursos, quando houver ferramentas
+                            analíticas autorizadas.</li>
+                        <li>Enviar comunicações de marketing quando houver base legal adequada e, quando necessário,
+                            consentimento.</li>
+                        <li>Cumprir obrigações legais e regulatórias e exercer direitos em processos administrativos ou
+                            judiciais.</li>
                     </ul>
-
-                    <p class="mt-5 leading-8 text-[#71717B]">
-                        O tratamento será realizado com fundamento em uma das bases
-                        legais previstas na LGPD, conforme a finalidade de cada operação.
-                    </p>
+                    <p>O tratamento será realizado com fundamento em uma das bases legais previstas na LGPD, conforme a
+                        finalidade de cada operação.</p>
                 </section>
 
-                <div class="border-t border-zinc-200"></div>
-
-                <section id="cookies" class="scroll-mt-8 py-10">
-                    <span class="text-xs font-bold tracking-widest text-[#E7000B]">04 / TECNOLOGIA</span>
-                    <h2 class="mt-2 text-2xl font-bold tracking-tight">Cookies e tecnologias semelhantes</h2>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Cookies são pequenos arquivos armazenados no dispositivo
-                        do usuário que podem ajudar o site a funcionar corretamente,
-                        lembrar preferências e compreender padrões de navegação.
-                    </p>
-
-                    <div class="mt-6 overflow-hidden rounded-xl border border-zinc-200">
-                        <div
-                            class="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] gap-4 bg-zinc-50 px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#71717B]">
-                            <span>Categoria</span>
-                            <span>Finalidade</span>
+                <section id="cookies" class="legal-section">
+                    <p class="legal-kicker">04 / Tecnologia</p>
+                    <h2>Cookies e tecnologias semelhantes</h2>
+                    <p>Cookies são pequenos arquivos armazenados no dispositivo do usuário que podem ajudar o site a
+                        funcionar corretamente, lembrar preferências e compreender padrões de navegação.</p>
+                    <div class="legal-table" role="table" aria-label="Categorias de cookies">
+                        <div class="legal-row legal-row-head" role="row">
+                            <span role="columnheader">Categoria</span><span role="columnheader">Finalidade</span>
                         </div>
-
-                        <div
-                            class="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] gap-4 border-t border-zinc-200 px-5 py-4 text-sm">
-                            <span class="font-semibold">Necessários</span>
-                            <span class="leading-6 text-[#71717B]">Permitem funções essenciais do site e o registro de
-                                preferências.</span>
+                        <div class="legal-row" role="row">
+                            <span role="cell"><b>Necessários</b></span>
+                            <span role="cell">Permitem funções essenciais do site e o registro de preferências.</span>
                         </div>
-
-                        <div
-                            class="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] gap-4 border-t border-zinc-200 px-5 py-4 text-sm">
-                            <span class="font-semibold">Analíticos</span>
-                            <span class="leading-6 text-[#71717B]">Ajudam a entender como os visitantes utilizam o
-                                site.</span>
+                        <div class="legal-row" role="row">
+                            <span role="cell"><b>Analíticos</b></span>
+                            <span role="cell">Ajudam a entender como os visitantes utilizam o site.</span>
                         </div>
-
-                        <div
-                            class="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] gap-4 border-t border-zinc-200 px-5 py-4 text-sm">
-                            <span class="font-semibold">Marketing</span>
-                            <span class="leading-6 text-[#71717B]">Podem ser usados para mensuração de campanhas e
-                                personalização de anúncios.</span>
+                        <div class="legal-row" role="row">
+                            <span role="cell"><b>Marketing</b></span>
+                            <span role="cell">Podem ser usados para mensuração de campanhas e personalização de
+                                anúncios.</span>
                         </div>
                     </div>
-
-                    <p class="mt-5 leading-8 text-[#71717B]">
-                        Os cookies não essenciais serão utilizados conforme as
-                        escolhas do usuário e os requisitos legais aplicáveis.
-                        Você pode rever suas preferências pelo mecanismo de
-                        gerenciamento de cookies disponibilizado no site.
-                    </p>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        A desativação de determinados cookies pode afetar algumas
-                        funcionalidades. As configurações do navegador também
-                        podem ser utilizadas para gerenciar cookies, respeitadas
-                        as limitações de cada ferramenta.
-                    </p>
+                    <p>Os cookies analíticos e de marketing só são ativados depois que você clica em <b>“Aceitar”</b> no
+                        aviso exibido no primeiro acesso. Você pode revogar essa autorização a qualquer momento: o aviso
+                        volta a ser exibido e as ferramentas deixam de ser autorizadas.</p>
+                    <button type="button" class="btn btn-ghost btn-sm legal-reset" data-cookie-reset>Redefinir
+                        preferências de cookies</button>
+                    <p>A desativação de determinados cookies pode afetar algumas funcionalidades. As configurações do
+                        navegador também podem ser utilizadas para gerenciar cookies, respeitadas as limitações de cada
+                        ferramenta.</p>
                 </section>
 
-                <div class="border-t border-zinc-200"></div>
-
-                <section id="compartilhamento" class="scroll-mt-8 py-10">
-                    <span class="text-xs font-bold tracking-widest text-[#E7000B]">05 / TERCEIROS</span>
-                    <h2 class="mt-2 text-2xl font-bold tracking-tight">Compartilhamento de dados</h2>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Seus dados poderão ser compartilhados quando necessário
-                        para as finalidades descritas nesta política, incluindo
-                        com as seguintes categorias de destinatários:
-                    </p>
-
-                    <ul class="mt-5 space-y-3 text-[#71717B]">
-                        <li class="flex gap-3 leading-7">
-                            <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#E7000B]"></span>
-                            Provedores de hospedagem, infraestrutura e segurança.
-                        </li>
-                        <li class="flex gap-3 leading-7">
-                            <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#E7000B]"></span>
-                            Ferramentas de análise, publicidade e mensuração, quando utilizadas.
-                        </li>
-                        <li class="flex gap-3 leading-7">
-                            <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#E7000B]"></span>
-                            Prestadores de serviços necessários ao atendimento e à operação do negócio.
-                        </li>
-                        <li class="flex gap-3 leading-7">
-                            <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#E7000B]"></span>
-                            Autoridades públicas, quando houver obrigação legal ou determinação válida.
-                        </li>
+                <section id="compartilhamento" class="legal-section">
+                    <p class="legal-kicker">05 / Terceiros</p>
+                    <h2>Compartilhamento de dados</h2>
+                    <p>Seus dados poderão ser compartilhados quando necessário para as finalidades descritas nesta
+                        política, incluindo com as seguintes categorias de destinatários:</p>
+                    <ul class="legal-list">
+                        <li>Provedores de hospedagem, infraestrutura e segurança.</li>
+                        <li>Ferramentas de análise, publicidade e mensuração, quando utilizadas.</li>
+                        <li>Prestadores de serviços necessários ao atendimento e à operação do negócio, incluindo a
+                            administradora do consórcio.</li>
+                        <li>Autoridades públicas, quando houver obrigação legal ou determinação válida.</li>
                     </ul>
-
-                    <p class="mt-5 leading-8 text-[#71717B]">
-                        Buscamos limitar o compartilhamento ao necessário e adotar
-                        medidas compatíveis com a proteção dos dados. Quando houver
-                        transferência internacional, serão observados os requisitos
-                        previstos na legislação aplicável.
-                    </p>
+                    <p>Buscamos limitar o compartilhamento ao necessário e adotar medidas compatíveis com a proteção dos
+                        dados. Quando houver transferência internacional, serão observados os requisitos previstos na
+                        legislação aplicável.</p>
                 </section>
 
-                <div class="border-t border-zinc-200"></div>
-
-                <section id="seguranca" class="scroll-mt-8 py-10">
-                    <span class="text-xs font-bold tracking-widest text-[#E7000B]">06 / PROTEÇÃO</span>
-                    <h2 class="mt-2 text-2xl font-bold tracking-tight">Segurança e armazenamento</h2>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Adotamos medidas técnicas e organizacionais compatíveis
-                        com os riscos envolvidos para proteger os dados pessoais
-                        contra acessos não autorizados, perda, alteração ou
-                        divulgação indevida.
-                    </p>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Apesar dos esforços de segurança, nenhum sistema é capaz
-                        de garantir proteção absoluta contra todos os incidentes.
-                    </p>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Os dados serão mantidos pelo período necessário para
-                        cumprir as finalidades do tratamento, atender obrigações
-                        legais ou regulatórias e resguardar direitos, observados
-                        os prazos e as hipóteses de conservação previstos na LGPD.
-                    </p>
+                <section id="seguranca" class="legal-section">
+                    <p class="legal-kicker">06 / Proteção</p>
+                    <h2>Segurança e armazenamento</h2>
+                    <p>Adotamos medidas técnicas e organizacionais compatíveis com os riscos envolvidos para proteger os
+                        dados pessoais contra acessos não autorizados, perda, alteração ou divulgação indevida.</p>
+                    <p>Apesar dos esforços de segurança, nenhum sistema é capaz de garantir proteção absoluta contra
+                        todos os incidentes.</p>
+                    <p>Os dados serão mantidos pelo período necessário para cumprir as finalidades do tratamento,
+                        atender obrigações legais ou regulatórias e resguardar direitos, observados os prazos e as
+                        hipóteses de conservação previstos na LGPD.</p>
                 </section>
 
-                <div class="border-t border-zinc-200"></div>
-
-                <section id="direitos" class="scroll-mt-8 py-10">
-                    <span class="text-xs font-bold tracking-widest text-[#E7000B]">07 / LGPD</span>
-                    <h2 class="mt-2 text-2xl font-bold tracking-tight">Seus direitos como titular</h2>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Nos termos da LGPD, você pode exercer os direitos
-                        aplicáveis ao seu caso, incluindo:
-                    </p>
-
-                    <div class="mt-6 grid gap-3 sm:grid-cols-2">
-                        <div class="rounded-xl bg-zinc-50 p-4">
-                            <h3 class="text-sm font-bold">Confirmação e acesso</h3>
-                            <p class="mt-2 text-sm leading-6 text-[#71717B]">
-                                Saber se tratamos seus dados e solicitar acesso a eles.
-                            </p>
+                <section id="direitos" class="legal-section">
+                    <p class="legal-kicker">07 / LGPD</p>
+                    <h2>Seus direitos como titular</h2>
+                    <p>Nos termos da LGPD, você pode exercer os direitos aplicáveis ao seu caso, incluindo:</p>
+                    <div class="legal-cards legal-cards-3">
+                        <div class="legal-card">
+                            <h3>Confirmação e acesso</h3>
+                            <p>Saber se tratamos seus dados e solicitar acesso a eles.</p>
                         </div>
-
-                        <div class="rounded-xl bg-zinc-50 p-4">
-                            <h3 class="text-sm font-bold">Correção</h3>
-                            <p class="mt-2 text-sm leading-6 text-[#71717B]">
-                                Solicitar a atualização de dados incompletos ou incorretos.
-                            </p>
+                        <div class="legal-card">
+                            <h3>Correção</h3>
+                            <p>Solicitar a atualização de dados incompletos ou incorretos.</p>
                         </div>
-
-                        <div class="rounded-xl bg-zinc-50 p-4">
-                            <h3 class="text-sm font-bold">Eliminação</h3>
-                            <p class="mt-2 text-sm leading-6 text-[#71717B]">
-                                Solicitar a eliminação de dados nas hipóteses previstas em lei.
-                            </p>
+                        <div class="legal-card">
+                            <h3>Eliminação</h3>
+                            <p>Solicitar a eliminação de dados nas hipóteses previstas em lei.</p>
                         </div>
-
-                        <div class="rounded-xl bg-zinc-50 p-4">
-                            <h3 class="text-sm font-bold">Portabilidade</h3>
-                            <p class="mt-2 text-sm leading-6 text-[#71717B]">
-                                Solicitar a portabilidade, observadas a regulamentação e as condições legais.
-                            </p>
+                        <div class="legal-card">
+                            <h3>Portabilidade</h3>
+                            <p>Solicitar a portabilidade, observadas a regulamentação e as condições legais.</p>
                         </div>
-
-                        <div class="rounded-xl bg-zinc-50 p-4">
-                            <h3 class="text-sm font-bold">Informações sobre uso</h3>
-                            <p class="mt-2 text-sm leading-6 text-[#71717B]">
-                                Obter informações sobre compartilhamento e consequências da recusa, quando aplicável.
-                            </p>
+                        <div class="legal-card">
+                            <h3>Informações sobre uso</h3>
+                            <p>Obter informações sobre compartilhamento e consequências da recusa, quando aplicável.</p>
                         </div>
-
-                        <div class="rounded-xl bg-zinc-50 p-4">
-                            <h3 class="text-sm font-bold">Revogação do consentimento</h3>
-                            <p class="mt-2 text-sm leading-6 text-[#71717B]">
-                                Retirar o consentimento quando ele for a base legal do tratamento.
-                            </p>
+                        <div class="legal-card">
+                            <h3>Revogação do consentimento</h3>
+                            <p>Retirar o consentimento quando ele for a base legal do tratamento.</p>
                         </div>
                     </div>
-
-                    <p class="mt-5 leading-8 text-[#71717B]">
-                        Para exercer seus direitos, entre em contato pelo canal
-                        indicado abaixo. Poderemos solicitar informações
-                        razoavelmente necessárias para confirmar sua identidade
-                        e proteger seus dados. As solicitações serão atendidas
-                        nos prazos e limites estabelecidos pela legislação.
-                    </p>
+                    <p>Para exercer seus direitos, entre em contato pelo canal indicado abaixo. Poderemos solicitar
+                        informações razoavelmente necessárias para confirmar sua identidade e proteger seus dados. As
+                        solicitações serão atendidas nos prazos e limites estabelecidos pela legislação.</p>
                 </section>
 
-                <div class="border-t border-zinc-200"></div>
-
-                <section id="contato" class="scroll-mt-8 py-10">
-                    <span class="text-xs font-bold tracking-widest text-[#E7000B]">08 / ATENDIMENTO</span>
-                    <h2 class="mt-2 text-2xl font-bold tracking-tight">Fale conosco</h2>
-
-                    <p class="mt-4 leading-8 text-[#71717B]">
-                        Se você tiver dúvidas sobre esta Política de Privacidade,
-                        desejar exercer seus direitos ou obter informações sobre
-                        o tratamento dos seus dados pessoais, entre em contato:
-                    </p>
-
-                    <div class="mt-6 rounded-2xl border border-zinc-200 p-6 sm:p-8">
-                        <p class="text-sm text-[#71717B]">Responsável pelo tratamento</p>
-                        <p class="mt-1 text-lg font-bold">[Nome da empresa]</p>
-
-                        <div class="mt-6 space-y-4">
-                            <div>
-                                <p class="text-xs font-semibold uppercase tracking-wider text-[#71717B]">
-                                    E-mail
-                                </p>
-                                <a href="mailto:[email-de-privacidade]"
-                                    class="mt-1 inline-block font-medium text-[#18181b] underline decoration-zinc-300 underline-offset-4 transition hover:text-[#E7000B]">
-                                    [email-de-privacidade]
-                                </a>
-                            </div>
-
-                            <div>
-                                <p class="text-xs font-semibold uppercase tracking-wider text-[#71717B]">
-                                    Telefone
-                                </p>
-                                <p class="mt-1 font-medium">[telefone de contato]</p>
-                            </div>
-
-                            <div>
-                                <p class="text-xs font-semibold uppercase tracking-wider text-[#71717B]">
-                                    Endereço
-                                </p>
-                                <p class="mt-1 leading-7 text-[#71717B]">
-                                    [endereço comercial, cidade e estado]
-                                </p>
-                            </div>
+                <section id="contato" class="legal-section">
+                    <p class="legal-kicker">08 / Atendimento</p>
+                    <h2>Fale conosco</h2>
+                    <p>Se você tiver dúvidas sobre esta Política de Privacidade, desejar exercer seus direitos ou obter
+                        informações sobre o tratamento dos seus dados pessoais, entre em contato:</p>
+                    <dl class="legal-contact">
+                        <div>
+                            <dt>Responsável pelo tratamento</dt>
+                            <dd>Shineray Teq Motors — CNPJ 59.083.795/0001-91</dd>
                         </div>
-
-                        <a href="mailto:[email-de-privacidade]"
-                            class="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#E7000B] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-red-700 sm:w-auto">
-                            Entrar em contato
-                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M7 17 17 7M7 7h10v10" />
-                            </svg>
-                        </a>
-                    </div>
+                        <div>
+                            <dt>Telefone / WhatsApp</dt>
+                            <dd>(34) 9843-4495</dd>
+                        </div>
+                        <div>
+                            <dt>Endereço</dt>
+                            <dd>Av. Afonso Pena, 3570 – Bairro Brasil, Uberlândia/MG</dd>
+                        </div>
+                        <div>
+                            <dt>Horário de atendimento</dt>
+                            <dd>Seg–Sex 9h–19h • Sáb 9h–13h</dd>
+                        </div>
+                    </dl>
                 </section>
 
-                <div class="border-t border-zinc-200"></div>
-
-                <section class="pt-8">
-                    <h2 class="text-lg font-bold">Atualizações desta política</h2>
-                    <p class="mt-3 leading-8 text-[#71717B]">
-                        Esta política poderá ser atualizada para refletir mudanças
-                        nas práticas de tratamento de dados, nos serviços oferecidos
-                        ou na legislação aplicável. A versão vigente estará disponível
-                        nesta página, com a respectiva data de atualização.
-                    </p>
+                <section class="legal-section">
+                    <h2>Atualizações desta política</h2>
+                    <p>Esta política poderá ser atualizada para refletir mudanças nas práticas de tratamento de dados,
+                        nos serviços oferecidos ou na legislação aplicável. A versão vigente estará disponível nesta
+                        página, com a respectiva data de atualização.</p>
+                    <a class="link-inline" href="index.html">Voltar para a página inicial <svg class="ico"><use href="#i-arrow" /></svg></a>
                 </section>
-
             </article>
-        </section>
+        </div>
     </main>
 
-
-    <footer class="site-footer border-t border-zinc-200 bg-white">
-        <div class="footer-container container">
-            <div class="footer-logo-area">
-                <img src="https://shinerayuberlandiamg.com.br/wp-content/themes/teqmotors/assets/img/logo-dark.svg"
-                    alt="Teq Motors" class="footer-logo" width="220" height="37" loading="lazy" decoding="async">
-                <span class="footer-logo-sub">CONCESSIONÁRIA OFICIAL SHINERAY</span>
+    <!-- Rodapé (mesmo da home) -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/img/logo-dark.webp" alt="Shineray Teq Motors" width="400" height="48" loading="lazy" decoding="async">
+                <p>Concessionária oficial Shineray<br>CNPJ: 59.083.795/0001-91</p>
             </div>
-
-            <div class="footer-info">
-                <p class="footer-cnpj">CNPJ: 59.083.795/0001-91</p>
-
-                <p class="footer-address">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M8.40069 14.5323C9.64069 13.4617 13.3334 9.99501 13.3334 6.66634C13.3334 5.25185 12.7715 3.8953 11.7713 2.89511C10.7711 1.89491 9.41451 1.33301 8.00002 1.33301C6.58553 1.33301 5.22898 1.89491 4.22878 2.89511C3.22859 3.8953 2.66669 5.25185 2.66669 6.66664C2.66669 9.99501 6.35935 13.4617 7.59935 14.5323C7.71487 14.6192 7.85549 14.6662 8.00002 14.6662C8.14455 14.6662 8.28517 14.6192 8.40069 14.5323Z"
-                            stroke="#E7000B" stroke-opacity="0.7" stroke-width="1.33333" stroke-linecap="round"
-                            stroke-linejoin="round"></path>
-                        <path
-                            d="M8 8.66699C9.10457 8.66699 10 7.77156 10 6.66699C10 5.56242 9.10457 4.66699 8 4.66699C6.89543 4.66699 6 5.56242 6 6.66699C6 7.77156 6.89543 8.66699 8 8.66699Z"
-                            stroke="#E7000B" stroke-opacity="0.7" stroke-width="1.33333" stroke-linecap="round"
-                            stroke-linejoin="round"></path>
-                    </svg>
-
-                    Av. Afonso Pena, 3570 – Bairro Brasil, Uberlândia - MG
-                </p>
-
-                <p class="footer-hours">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7.99998 14.6663C11.6819 14.6663 14.6666 11.6816 14.6666 7.99967C14.6666 4.31778 11.6819 1.33301 7.99998 1.33301C4.31808 1.33301 1.33331 4.31778 1.33331 7.99967C1.33331 11.6816 4.31808 14.6663 7.99998 14.6663Z"
-                            stroke="#E7000B" stroke-opacity="0.7" stroke-width="1.33333" stroke-linecap="round"
-                            stroke-linejoin="round"></path>
-                        <path d="M8 4V8L10.6667 9.33333" stroke="#E7000B" stroke-opacity="0.7" stroke-width="1.33333"
-                            stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-
-                    Seg–Sex 9h–19h • Sáb 9h–13h
-                </p>
+            <div>
+                <h3 class="footer-title">Atendimento</h3>
+                <p>Seg–Sex 9h–19h • Sáb 9h–13h</p>
+                <a class="link-inline" href="index.html#simular">Simular agora <svg
+                        class="ico"><use href="#i-arrow" /></svg></a>
             </div>
-
-            <div class="footer-social-wrapper">
-                <a href="https://instagram.com/teqmotorsuberlandia" class="footer-social-btn" target="_blank"
-                    rel="noopener noreferrer">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" class="social-icon">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                    @teqmotorsuberlandia </a>
-            </div>
-
-            <div class="footer-privacy">
-                <a href="https://shinerayuberlandiamg.com.br/politica-de-privacidade" class="privacy-link">Política de
-                    Privacidade</a>
+            <div>
+                <h3 class="footer-title">Links</h3>
+                <a href="https://www.instagram.com/shineray.motodagenteuberlandia/" target="_blank" rel="noopener">@shineray.motodagenteuberlandia</a>
+                <a href="politica-de-privacidade.html" aria-current="page">Política de Privacidade</a>
             </div>
         </div>
+        <div class="container footer-legal">
+            <p>Consórcio administrado por administradora autorizada e fiscalizada pelo Banco Central do Brasil. Contemplação por sorteio ou lance, sem data garantida. Parcelas sujeitas a
+                atualização conforme contrato. Leia o regulamento do grupo antes de contratar.</p>
+        </div>
 
-        <div class="footer-bottom">
-            <div class="footer-bottom-container container">
-                <p class="copyright">©2026 <strong>Shineray Teq Motors</strong>. Todos os direitos reservados.</p>
-                <a class="logo_agencia" href="https://agenciar8.com.br" target="_blank">
-                    <img data-src="https://agenciar8.com.br/footerlogos/agenciar8.png" alt="Agência R8"
-                        src="https://agenciar8.com.br/footerlogos/agenciar8.png" class="lazyloaded" width="107"
-                        height="30" style="width: auto;">
-                </a>
+        <!-- Assinatura padrão Agência R8 -->
+        <div class="signature is-near">
+            <div class="container signature-content">
+                <div class="store-info">
+                    <strong>© Shineray Teq Motors -</strong>
+                    <span data-year>2026</span> Todos os direitos reservados.
+                </div>
+                <div class="logos">
+                    <a href="https://agenciar8.com.br/" rel="noreferrer" target="_blank">
+                        <span class="tool" data-tip="Design e Implementação">
+                            <img src="https://agenciar8.com.br/footerlogos/agenciar8.png" alt="Agência R8"
+                                width="33" height="34" loading="lazy" decoding="async">
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Popup -->
-    <div id="cookie-popup"
-        class="fixed bottom-4 left-4 right-4 z-[9999] mx-auto max-w-lg rounded-2xl border border-zinc-200 bg-[#ffffff] p-6 text-[#18181b] shadow-2xl sm:bottom-6 sm:left-auto sm:right-6">
-
-        <!-- Ícone e título -->
-        <div class="mb-4 flex items-start gap-3">
-            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-[#E7000B]">
-                🍪
-            </div>
-
-            <div class="flex-1">
-                <h2 class="text-lg font-bold tracking-tight text-[#18181b]">
-                    Sua privacidade importa
-                </h2>
-                <p class="mt-1 text-sm leading-relaxed text-[#71717B]">
-                    Utilizamos cookies para melhorar sua experiência,
-                    analisar o tráfego e personalizar conteúdos.
-                    Você decide quais cookies permitir.
-                </p>
-            </div>
-
-            <button id="cookie-close" type="button" aria-label="Fechar aviso de cookies"
-                class="rounded-lg p-1 text-[#71717B] transition hover:bg-zinc-100 hover:text-[#18181b]">
-                ✕
-            </button>
-        </div>
-
-        <!-- Preferências -->
-        <div id="cookie-preferences" class="mb-4 hidden space-y-3 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
-
-            <label class="flex items-center justify-between gap-4 text-sm">
-                <span>
-                    <span class="block font-medium text-[#18181b]">Cookies necessários</span>
-                    <span class="text-xs text-[#71717B]">Essenciais para o site funcionar.</span>
-                </span>
-                <input type="checkbox" checked disabled class="h-4 w-4 accent-[#E7000B]">
-            </label>
-
-            <label class="flex items-center justify-between gap-4 text-sm">
-                <span>
-                    <span class="block font-medium text-[#18181b]">Cookies analíticos</span>
-                    <span class="text-xs text-[#71717B]">Ajudam a entender o uso do site.</span>
-                </span>
-                <input id="cookie-analytics" type="checkbox" class="h-4 w-4 cursor-pointer accent-[#E7000B]">
-            </label>
-
-            <label class="flex items-center justify-between gap-4 text-sm">
-                <span>
-                    <span class="block font-medium text-[#18181b]">Cookies de marketing</span>
-                    <span class="text-xs text-[#71717B]">Permitem personalizar anúncios.</span>
-                </span>
-                <input id="cookie-marketing" type="checkbox" class="h-4 w-4 cursor-pointer accent-[#E7000B]">
-            </label>
-        </div>
-
-        <!-- Botões -->
-        <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
-          
-            <button id="cookie-accept" type="button"
-                class="rounded-xl bg-[#E7000B] px-4 py-3 text-sm font-semibold text-white transition hover:bg-red-700">
-                Aceitar todos
-            </button>
-
-        
-        </div>
-
-        <!-- Política -->
-        <p class="mt-3 text-xs text-[#71717B]">
-            Saiba mais em nossa
-            <a href="/politica-de-privacidade"
-                class="text-[#18181b] underline decoration-zinc-300 underline-offset-2 hover:text-[#E7000B]">
-                Política de Privacidade
-            </a>.
-        </p>
-    </div>
-
+    <script src="assets/js/config.js?v=3.1.2" defer></script>
+    <script src="assets/js/consent.js?v=3.1.2" defer></script>
     <script>
-        (() => {
-            const popup = document.getElementById('cookie-popup');
-            const preferences = document.getElementById('cookie-preferences');
-            const analytics = document.getElementById('cookie-analytics');
-            const marketing = document.getElementById('cookie-marketing');
-
-            const STORAGE_KEY = 'cookie-consent';
-
-            function closePopup() {
-                popup.classList.add('hidden');
-            }
-
-            function saveConsent(consent) {
-                try {
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify({
-                        necessary: true,
-                        analytics: consent.analytics,
-                        marketing: consent.marketing,
-                        updatedAt: new Date().toISOString()
-                    }));
-
-                    closePopup();
-
-                    // Integre aqui a ativação das ferramentas autorizadas.
-                    window.dispatchEvent(new CustomEvent('cookie-consent-updated', {
-                        detail: consent
-                    }));
-                } catch (error) {
-                    console.error('Não foi possível salvar as preferências:', error);
-                }
-            }
-
-            // Exibe o popup apenas se ainda não houver uma escolha salva.
-            try {
-                const saved = localStorage.getItem(STORAGE_KEY);
-
-                if (saved) {
-                    const consent = JSON.parse(saved);
-
-                    if (consent && consent.necessary === true) {
-                        closePopup();
-                    }
-                }
-            } catch (error) {
-                console.warn('Não foi possível ler o consentimento salvo.');
-            }
-
-            document.getElementById('cookie-accept').addEventListener('click', () => {
-                analytics.checked = true;
-                marketing.checked = true;
-
-                saveConsent({
-                    analytics: true,
-                    marketing: true
-                });
-            });
-
-            document.getElementById('cookie-reject').addEventListener('click', () => {
-                saveConsent({
-                    analytics: false,
-                    marketing: false
-                });
-            });
-
-            document.getElementById('cookie-customize').addEventListener('click', () => {
-                const isHidden = preferences.classList.toggle('hidden');
-
-                document.getElementById('cookie-customize').textContent =
-                    isHidden ? 'Personalizar preferências' : 'Salvar minhas preferências';
-
-                if (!isHidden) {
-                    document.getElementById('cookie-customize').onclick = () => {
-                        saveConsent({
-                            analytics: analytics.checked,
-                            marketing: marketing.checked
-                        });
-                    };
-                } else {
-                    document.getElementById('cookie-customize').onclick = null;
-                }
-            });
-
-            document.getElementById('cookie-close').addEventListener('click', () => {
-                // Fechar não equivale a consentir.
-                closePopup();
-            });
-        })();
+        // Ano do rodapé e borda do header ao rolar (o restante do main.js é específico da home)
+        document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+        const header = document.querySelector('.site-header');
+        const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
     </script>
-
-
 </body>
 
 </html>

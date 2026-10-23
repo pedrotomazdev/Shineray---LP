@@ -11,7 +11,8 @@ assets/js/config.js         dados comerciais e integrações (editar aqui)
 assets/js/main.js           slider, formulário, animações, FAQ, cookies/LGPD
 assets/img/motos/*.webp     motos recortadas (900px e 480px)
 assets/img/_src/            PNGs originais baixados do site da concessionária
-politica-de-privacidade.html  cópia da v1 (usa landingpage.css e logo-dark.png da raiz)
+politica-de-privacidade.html  mesmo layout da home (header, rodapé, style.css)
+assets/js/consent.js        aviso de cookies + integrações (compartilhado pelas duas páginas)
 ```
 
 Rodar localmente: `python -m http.server 5500` e abrir http://localhost:5500.
@@ -24,7 +25,7 @@ Lighthouse local (servidor com compressão), 22/10/2026: **100 / 100 / 100 / 100
 - Fonte Inter Tight hospedada em `assets/fonts` (subset latin, variável 400–700) com `preload` e fallback de métricas.
 - Elementos do hero sem animação de entrada (não atrasam o LCP); demais seções com `.reveal`.
 - Imagens WebP com `srcset`/`sizes`, `width`/`height` e `loading="lazy"` fora da primeira dobra.
-- CSS/JS versionados por query (`?v=3.0.2`) — **troque a versão a cada publicação**, pois o `vercel.json`
+- CSS/JS versionados por query (`?v=3.1.2`) — **troque a versão a cada publicação**, pois o `vercel.json`
   aplica cache de 1 ano (`immutable`) em `assets/css`, `assets/js` e `assets/fonts`.
 - SEO: title/description, canonical, Open Graph + Twitter (`assets/img/og-consorcio-shineray.jpg`, 1200×630),
   JSON-LD (Organization + WebPage), favicons, `robots.txt` e `sitemap.xml`.

@@ -226,7 +226,8 @@ ol {
 
 /* sobre o fundo creme o vermelho padrão fica abaixo de 4,5:1 em texto pequeno */
 .hero-b .eyebrow,
-.section-tint .eyebrow {
+.section-tint .eyebrow,
+.legal-hero .eyebrow {
     color: var(--red-ink);
 }
 
@@ -1946,6 +1947,244 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     filter: drop-shadow(0 30px 24px rgba(0, 0, 0, .3));
 }
 
+/* ---------- Política de Privacidade ---------- */
+
+.legal-hero {
+    padding: clamp(48px, 7vw, 96px) 0 clamp(40px, 5vw, 64px);
+    background: var(--tint);
+}
+
+.legal-hero .lead {
+    margin-top: 20px;
+}
+
+.legal-updated {
+    margin-top: 18px;
+    font-size: .88rem;
+    color: var(--muted);
+}
+
+.legal-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 88px);
+    align-items: start;
+    padding: clamp(48px, 6vw, 80px) 0 var(--section);
+}
+
+.legal-nav {
+    display: grid;
+    gap: 2px;
+}
+
+.legal-nav-title {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+    font-size: .76rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.legal-nav a {
+    display: flex;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: var(--r-sm);
+    font-size: .94rem;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: background-color .2s var(--ease), color .2s var(--ease);
+}
+
+.legal-nav a span {
+    font-weight: 600;
+    color: var(--red-ink);
+    font-variant-numeric: tabular-nums;
+}
+
+.legal-nav a:hover {
+    background: var(--tint);
+    color: var(--ink);
+}
+
+.legal-aside-card {
+    margin-top: 28px;
+    padding: 22px;
+    border-radius: var(--r-lg);
+    background: var(--dark);
+    color: rgba(255, 255, 255, .75);
+    font-size: .9rem;
+}
+
+.legal-aside-card .ico {
+    width: 26px;
+    height: 26px;
+    color: #ff5a5f;
+}
+
+.legal-aside-title {
+    margin: 12px 0 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.legal-article {
+    max-width: 760px;
+}
+
+.legal-section {
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 96px;
+}
+
+.legal-section:first-child {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.legal-kicker {
+    margin-bottom: 10px;
+    font-size: .76rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red-ink);
+}
+
+.legal-section h2 {
+    margin-bottom: 16px;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+}
+
+.legal-section p {
+    color: var(--ink-2);
+    line-height: 1.7;
+}
+
+.legal-section p + p {
+    margin-top: 14px;
+}
+
+.legal-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.legal-card {
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    background: var(--paper);
+}
+
+.legal-card h3 {
+    margin-bottom: 6px;
+    font-size: 1.02rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.legal-card p {
+    color: var(--muted);
+    font-size: .92rem;
+    line-height: 1.55;
+}
+
+.legal-list {
+    display: grid;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.legal-list li {
+    position: relative;
+    padding-left: 22px;
+    color: var(--ink-2);
+    line-height: 1.6;
+}
+
+.legal-list li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: .62em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+}
+
+.legal-table {
+    margin: 22px 0;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+}
+
+.legal-row {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr);
+    gap: 16px;
+    padding: 14px 20px;
+    border-top: 1px solid var(--line);
+    font-size: .94rem;
+    color: var(--ink-2);
+}
+
+.legal-row-head {
+    border-top: 0;
+    background: var(--tint);
+    font-size: .74rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.legal-reset {
+    margin: 18px 0 6px;
+}
+
+.legal-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 22px 0 0;
+}
+
+.legal-contact div {
+    padding: 18px 20px;
+    border-radius: var(--r-lg);
+    background: var(--tint);
+}
+
+.legal-contact dt {
+    font-size: .74rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.legal-contact dd {
+    margin: 6px 0 0;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.legal-section .link-inline {
+    margin-top: 22px;
+}
+
 /* ---------- Rodapé ---------- */
 
 .site-footer {
@@ -2174,35 +2413,6 @@ a:focus-visible .tool::after {
     padding: 0 18px;
 }
 
-/* ---------- Cookies ---------- */
-
-.cookie {
-    position: fixed;
-    left: 24px;
-    bottom: 24px;
-    z-index: 60;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    width: min(520px, calc(100% - 32px));
-    padding: 16px 16px 16px 22px;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: var(--r-lg);
-    box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .3);
-    font-size: .88rem;
-    line-height: 1.45;
-    color: var(--ink-2);
-}
-
-.cookie a {
-    color: var(--red);
-}
-
-.cookie .btn {
-    flex: none;
-}
-
 /* ---------- Animações de entrada ---------- */
 
 .js .reveal {
@@ -2286,6 +2496,24 @@ a:focus-visible .tool::after {
         order: -1;
     }
 
+    .legal-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .legal-aside-card {
+        display: none;
+    }
+
+    .legal-nav {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .legal-cards,
+    .legal-cards-3,
+    .legal-contact {
+        grid-template-columns: 1fr;
+    }
+
     /* Celular: texto → foto → formulário → benefícios (formulário perto do início) */
     .hero-b-grid {
         display: flex;
@@ -2330,9 +2558,16 @@ a:focus-visible .tool::after {
         cursor: default;
     }
 
+    /* sem hover/realce no celular: os itens são estáticos, com o subtexto sempre visível */
     .hero-b-benefits li:hover,
     .hero-b-benefits li:focus {
         background: rgba(18, 18, 18, .78);
+        box-shadow: none;
+    }
+
+    .hero-b-benefits li:hover .hb-num,
+    .hero-b-benefits li:focus .hb-num {
+        color: #ff5a5f;
     }
 
     .hb-detail {
@@ -2572,14 +2807,6 @@ a:focus-visible .tool::after {
         display: none;
     }
 
-    .cookie {
-        left: 12px;
-        bottom: 12px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-        padding: 16px;
-    }
 }
 
 .footer-grid .link-btn {

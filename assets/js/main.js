@@ -391,7 +391,8 @@
             return r.top < vh * 0.85 && r.bottom > vh * 0.15;
         });
         // Não disputa espaço com o aviso de cookies
-        const cookieOpen = !document.getElementById('cookie-popup').hidden;
+        const cookiePopup = document.getElementById('cookie-popup');
+        const cookieOpen = !!cookiePopup && !cookiePopup.hidden;
         // Nem sobre a assinatura do rodapé
         const signature = document.querySelector('.signature');
         const atFooter = signature && signature.getBoundingClientRect().top < vh;
@@ -426,75 +427,17 @@
     // Assinatura da agência: aplica a fonte Rajdhani só perto do rodapé (não disputa banda no carregamento)
     onView($$('.signature'), (el) => el.classList.add('is-near'), { rootMargin: '0px 0px 600px 0px' });
 
-    /* ---------------- Consentimento de cookies (LGPD) + integrações ---------------- */
-
-    const STORAGE_KEY = 'cookie-consent';
-    const popup = $('#cookie-popup');
-
-    // Google Consent Mode v2: tudo negado até a escolha do visitante.
-    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-    window.gtag('consent', 'default', {
-        ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied'
+    // Benefícios da hero: focáveis só onde abrem o detalhe (desktop com mouse)
+    const benefitItems = $$('.hero-b-benefits li');
+    const desktopHover = window.matchMedia('(hover: hover) and (min-width: 961px)');
+    const syncBenefitFocus = () => benefitItems.forEach((li) => {
+        if (desktopHover.matches) li.setAttribute('tabindex', '0');
+        else li.removeAttribute('tabindex');
     });
+    syncBenefitFocus();
+    desktopHover.addEventListener('change', syncBenefitFocus);
 
-    const loadScript = (src) => {
-        const s = document.createElement('script');
-        s.async = true;
-        s.src = src;
-        document.head.appendChild(s);
-    };
-    const loaded = {};
-
-    const applyConsent = (c) => {
-        window.gtag('consent', 'update', {
-            analytics_storage: c.analytics ? 'granted' : 'denied',
-            ad_storage: c.marketing ? 'granted' : 'denied',
-            ad_user_data: c.marketing ? 'granted' : 'denied',
-            ad_personalization: c.marketing ? 'granted' : 'denied'
-        });
-
-        if ((c.analytics || c.marketing) && CFG.gtmId && !loaded.gtm) {
-            loaded.gtm = true;
-            window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
-            loadScript(`https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(CFG.gtmId)}`);
-        }
-        if (c.marketing && CFG.metaPixelId && !loaded.pixel) {
-            loaded.pixel = true;
-            /* eslint-disable */
-            !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-            /* eslint-enable */
-            window.fbq('init', CFG.metaPixelId);
-            window.fbq('track', 'PageView');
-        }
-        if (c.marketing && CFG.rdStationScript && !loaded.rd) {
-            loaded.rd = true;
-            loadScript(CFG.rdStationScript);
-        }
-    };
-
-    const readConsent = () => {
-        try {
-            const c = JSON.parse(localStorage.getItem(STORAGE_KEY));
-            return c && c.necessary === true ? c : null;
-        } catch {
-            return null;
-        }
-    };
-
-    const saveConsent = (analytics, marketing) => {
-        const c = { necessary: true, analytics, marketing, updatedAt: new Date().toISOString() };
-        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(c)); } catch { /* navegação privada */ }
-        popup.hidden = true;
-        applyConsent(c);
-        window.dispatchEvent(new CustomEvent('cookie-consent-updated', { detail: c }));
-    };
-
-    const saved = readConsent();
-    if (saved) applyConsent(saved);
-    else popup.hidden = false;
-
-    $('[data-cookie="accept"]', popup).addEventListener('click', () => {
-        saveConsent(true, true);
-        onScroll();
-    });
+    // O aviso de cookies vive em consent.js; aqui só reposicionamos o CTA flutuante quando ele muda
+    window.addEventListener('cookie-consent-updated', onScroll);
+    window.addEventListener('cookie-banner-shown', onScroll);
 })();
